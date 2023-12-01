@@ -10,11 +10,9 @@
 enum Part1 {
     static func run(_ source: InputData) {
         if source == .example2 { return }
-        let input = source.data
-        let values = input.map {
+        let values = source.data.map {
             let ints = $0.compactMap { Int(String($0)) }
-            let value = String(ints.first!) + String(ints.last!)
-            return Int(value)!
+            return ints.first! * 10 + ints.last!
         }
 
         print("Part 1 (\(source)): \(values.reduce(0, +))")
@@ -29,33 +27,24 @@ enum Part2 {
     ]
 
     static func wordIndicies(in string: String) -> [(idx: Int, value: Int)] {
-        var matches: [(idx: Int, value: Int)] = []
-        for (n, word) in digitWords.enumerated() {
-            for range in string.ranges(of: word) {
-                let idx = string.distance(from: string.startIndex, to: range.lowerBound)
-                matches.append((idx, n + 1))
+        digitWords.enumerated()
+            .reduce(into: [(Int, Int)]()) { result, pair in
+                for range in string.ranges(of: pair.element) {
+                    let idx = string.distance(from: string.startIndex, to: range.lowerBound)
+                    result.append((idx, pair.offset + 1))
+                }
             }
-        }
-        return matches.sorted(by: { $0.idx < $1.idx })
     }
 
     static func run(_ source: InputData) {
         if source == .example { return }
-        let input = source.data
-        let values = input.map {
-            let ints = $0.map { Int(String($0)) }
-            let words = wordIndicies(in: $0)
-
-            let firstDigitIdx = ints.firstIndex(where: { $0 != nil }) ?? Int.max
-            let firstWordIdx = words.first ?? (idx: Int.max, value: 0)
-            let firstDigit = (firstDigitIdx < firstWordIdx.idx) ? ints[firstDigitIdx]! : firstWordIdx.value
-
-            let lastDigitIdx = ints.lastIndex(where: { $0 != nil }) ?? Int.min
-            let lastWordIdx = words.last ?? (idx: Int.min, value: 0)
-            let lastDigit = (lastDigitIdx > lastWordIdx.idx) ? ints[lastDigitIdx]! : lastWordIdx.value
-
-            let value = String(firstDigit) + String(lastDigit)
-            return Int(value)!
+        let values = source.data.map {
+            var numbers: [(idx: Int, value: Int)] = $0.enumerated().compactMap { pair in
+                Int(String(pair.element)).map { (pair.offset, $0) }
+            }
+            numbers.append(contentsOf: wordIndicies(in: $0))
+            numbers.sort(by: { $0.idx < $1.idx })
+            return numbers.first!.value * 10 + numbers.last!.value
         }
 
         print("Part 2 (\(source)): \(values.reduce(0, +))")
