@@ -16,6 +16,10 @@ enum InputData: String, CaseIterable {
         switch self {
 
         case .example: return """
+1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet
 """.components(separatedBy: .newlines)
 
         case .challenge:

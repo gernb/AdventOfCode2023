@@ -10,8 +10,15 @@
 enum Part1 {
     static func run(_ source: InputData) {
         let input = source.data
+        let values = input.map {
+            let ints = $0.compactMap { Int(String($0)) }
+            let value = String(ints.first!) + String(ints.last!)
+            return Int(value)!
+        }
 
-        print("Part 1 (\(source)):")
+        print(values)
+
+        print("Part 1 (\(source)): \(values.reduce(0, +))")
     }
 }
 
