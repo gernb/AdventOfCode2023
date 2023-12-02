@@ -60,10 +60,29 @@ enum Part1 {
 
 // MARK: - Part 2
 
+extension Dictionary where Key == Cube, Value == Int {
+    static let emptyBag: Self = [.red: 0, .green: 0, .blue: 0]
+
+    var power: Int {
+        self[.red]! * self[.green]! * self[.blue]!
+    }
+}
+
+extension Game {
+    var minimumBag: [Cube: Int] {
+        sets.reduce(into: .emptyBag) { result, `set` in
+            `set`.forEach { (key: Cube, value: Int) in
+                result[key] = max(value, result[key]!)
+            }
+        }
+    }
+}
+
 enum Part2 {
     static func run(_ source: InputData) {
-        let input = source.data
+        let games = source.data.map(Game.init)
+        let powers = games.map(\.minimumBag.power)
 
-        print("Part 2 (\(source)):")
+        print("Part 2 (\(source)): \(powers.reduce(0, +))")
     }
 }
