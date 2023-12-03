@@ -85,17 +85,74 @@ enum Part1 {
             isPartNumber = false
         }
 
-        // ! 1837615
         print("Part 1 (\(source)): \(partNumbers.reduce(0, +))")
     }
 }
 
 // MARK: - Part 2
 
+extension Dictionary where Key == Coordinate, Value == String {
+    func number(at coord: Coordinate) -> Int {
+        var result = 0
+        var coord = coord
+        while let digit = Int(self[coord] ?? "") {
+            result = result * 10 + digit
+            coord = coord.right
+        }
+        return result
+    }
+}
+
 enum Part2 {
     static func run(_ source: InputData) {
-        let input = source.data
+        let schematic = loadSchematic(from: source.data)
+        var gearRatios: [Int] = []
+        for y in schematic.yRange {
+            for x in schematic.xRange {
+                let coord = Coordinate(x: x, y: y)
+                let char = schematic[coord]!
+                guard char == "*" else { continue }
+                var numbers: [Int] = []
+                if Int(schematic[coord.upLeft] ?? "") != nil {
+                    var start = coord.upLeft
+                    while Int(schematic[start.left] ?? "") != nil {
+                        start = start.left
+                    }
+                    numbers.append(schematic.number(at: start))
+                } else if Int(schematic[coord.up] ?? "") != nil {
+                    numbers.append(schematic.number(at: coord.up))
+                }
+                if Int(schematic[coord.up] ?? "") == nil && Int(schematic[coord.upRight] ?? "") != nil {
+                    numbers.append(schematic.number(at: coord.upRight))
+                }
+                if Int(schematic[coord.left] ?? "") != nil {
+                    var start = coord.left
+                    while Int(schematic[start.left] ?? "") != nil {
+                        start = start.left
+                    }
+                    numbers.append(schematic.number(at: start))
+                }
+                if Int(schematic[coord.right] ?? "") != nil {
+                    numbers.append(schematic.number(at: coord.right))
+                }
+                if Int(schematic[coord.downLeft] ?? "") != nil {
+                    var start = coord.downLeft
+                    while Int(schematic[start.left] ?? "") != nil {
+                        start = start.left
+                    }
+                    numbers.append(schematic.number(at: start))
+                } else if Int(schematic[coord.down] ?? "") != nil {
+                    numbers.append(schematic.number(at: coord.down))
+                }
+                if Int(schematic[coord.down] ?? "") == nil && Int(schematic[coord.downRight] ?? "") != nil {
+                    numbers.append(schematic.number(at: coord.downRight))
+                }
+                if numbers.count == 2 {
+                    gearRatios.append(numbers[0] * numbers[1])
+                }
+            }
+        }
 
-        print("Part 2 (\(source)):")
+        print("Part 2 (\(source)): \(gearRatios.reduce(0, +))")
     }
 }
