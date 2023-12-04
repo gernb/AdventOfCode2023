@@ -46,8 +46,18 @@ enum Part1 {
 
 enum Part2 {
     static func run(_ source: InputData) {
-        let input = source.data
+        let cards = source.data.map(ScratchCard.init)
+        var cardCounts = Array<Int>(repeating: 1, count: cards.count)
+        let matches = cards.map { card in
+            card.numbers.filter { card.winningNumbers.contains($0) }
+        }
+        for (idx, match) in matches.enumerated() {
+            let count = cardCounts[idx]
+            for n in (idx + 1) ..< (idx + 1 + match.count) {
+                cardCounts[n] += count
+            }
+        }
 
-        print("Part 2 (\(source)):")
+        print("Part 2 (\(source)): \(cardCounts.reduce(0, +))")
     }
 }
