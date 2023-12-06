@@ -30,8 +30,10 @@ enum Part1 {
 
 enum Part2 {
     static func run(_ source: InputData) {
-        let input = source.data
+        let time = Int(source.data[0].split(separator: " ").dropFirst().joined())!
+        let distance = Int(source.data[1].split(separator: " ").dropFirst().joined())!
+        let winningSolutions = Part1.distances(for: time).filter { $0 > distance }
 
-        print("Part 2 (\(source)):")
+        print("Part 2 (\(source)): \(winningSolutions.count)")
     }
 }
