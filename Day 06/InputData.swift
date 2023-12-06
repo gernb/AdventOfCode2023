@@ -16,6 +16,8 @@ enum InputData: String, CaseIterable {
         switch self {
 
         case .example: return """
+Time:      7  15   30
+Distance:  9  40  200
 """.components(separatedBy: .newlines)
 
         case .challenge:
