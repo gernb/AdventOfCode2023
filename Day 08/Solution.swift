@@ -37,6 +37,7 @@ enum Part1 {
         }
     }
     static func run(_ source: InputData) {
+        if source == .example2 { return }
         let lines = source.data
         let instructions = lines[0].map(String.init)
         let maps = loadMaps(lines.dropFirst(2))
@@ -57,10 +58,47 @@ enum Part1 {
 
 // MARK: - Part 2
 
-enum Part2 {
-    static func run(_ source: InputData) {
-        let input = source.data
+func gcd(_ m: Int, _ n: Int) -> Int {
+    var a: Int = 0
+    var b: Int = max(m, n)
+    var r: Int = min(m, n)
 
-        print("Part 2 (\(source)):")
+    while r != 0 {
+        a = b
+        b = r
+        r = a % b
+    }
+    return b
+}
+
+func lcm(_ m: Int, _ n: Int) -> Int {
+    return (m * n) / gcd(m, n)
+}
+
+enum Part2 {
+    static func countSteps(from start: String, instructions: [String], maps: [String: Map]) -> Int {
+        let count = instructions.count
+        var idx = 0
+        var map = start
+        var steps = 0
+        while map.suffix(1) != "Z" {
+            map = maps[map]!.next(instructions[idx])
+            steps += 1
+            idx = (idx + 1) % count
+        }
+        return steps
+    }
+
+    static func run(_ source: InputData) {
+        if source == .example { return }
+        let lines = source.data
+        let instructions = lines[0].map(String.init)
+        let maps = Part1.loadMaps(lines.dropFirst(2))
+
+        let locations = maps.keys.filter { $0.suffix(1) == "A" }
+        let steps = locations.map { countSteps(from: $0, instructions: instructions, maps: maps) }
+        let result = steps.reduce(1, lcm(_:_:))
+
+        print("Part 2 (\(source)): \(result)")
     }
 }
