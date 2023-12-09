@@ -43,9 +43,32 @@ enum Part1 {
 // MARK: - Part 2
 
 enum Part2 {
-    static func run(_ source: InputData) {
-        let input = source.data
+    static func previousValue(for history: [Int]) -> Int {
+        var sequences = [history]
+        while sequences.last!.allSatisfy({ $0 == 0 }) == false {
+            let sequence = sequences.last!
+            let newSequence = sequence
+                .enumerated()
+                .dropLast()
+                .map { (idx: Int, value: Int) in
+                    sequence[idx + 1] - value
+                }
+            sequences.append(newSequence)
+        }
+        var previousValue = 0
+        for sequence in sequences.dropLast().reversed() {
+            previousValue = sequence.first! - previousValue
+        }
+        return previousValue
+    }
 
-        print("Part 2 (\(source)):")
+    static func run(_ source: InputData) {
+        let historyLines = source.data.map { line in
+            line.split(separator: " ").map { Int(String($0))! }
+        }
+        let previousValues = historyLines.map(previousValue(for:))
+
+        let sum = previousValues.reduce(0, +)
+        print("Part 2 (\(source)): \(sum)")
     }
 }
