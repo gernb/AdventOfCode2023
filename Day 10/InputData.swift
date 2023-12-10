@@ -7,42 +7,48 @@
 
 import Foundation
 
-enum InputData: String, CaseIterable {
+enum InputData {
     static let day = 10
+    static let part1 = [
+        Self.example,
+        Self.example2,
+        Self.challenge,
+    ]
+    static let part2 = [
+        Self.example3,
+        Self.example4,
+        Self.challenge,
+    ]
 
-    case example, example2, example3, challenge
-
-    var data: [String] {
-        switch self {
-
-        case .example: return """
+    static let example = (name: "example", lines: """
 -L|F7
 7S-7|
 L|7||
 -L-J|
 L|-JF
-""".components(separatedBy: .newlines)
+""".components(separatedBy: .newlines))
 
-        case .example2: return """
+    static let example2 = (name: "example2", lines: """
 7-F7-
 .FJ|7
 SJLL7
 |F--J
 LJ.LJ
-""".components(separatedBy: .newlines)
+""".components(separatedBy: .newlines))
 
-//        case .example3: return """
-//...........
-//.S-------7.
-//.|F-----7|.
-//.||.....||.
-//.||.....||.
-//.|L-7.F-J|.
-//.|..|.|..|.
-//.L--J.L--J.
-//...........
-//""".components(separatedBy: .newlines)
-        case .example3: return """
+    static let example3 = (name: "example3", lines: """
+...........
+.S-------7.
+.|F-----7|.
+.||.....||.
+.||.....||.
+.|L-7.F-J|.
+.|..|.|..|.
+.L--J.L--J.
+...........
+""".components(separatedBy: .newlines))
+
+    static let example4 = (name: "example4", lines: """
 FF7FSF7F7F7F7F7F---7
 L|LJ||||||||||||F--J
 FL-7LJLJ||||||LJL-77
@@ -53,13 +59,9 @@ L---JF-JLJ.||-FJLJJ7
 7-L-JL7||F7|L7F-7F7|
 L.L7LFJ|||||FJL7||LJ
 L7JLJL-JLJLJL--JLJ.L
-""".components(separatedBy: .newlines)
+""".components(separatedBy: .newlines))
 
-        case .challenge:
-            return try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath)
+    static let challenge = (name: "challenge", lines: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath)
                 .trimmingCharacters(in: .whitespacesAndNewlines)
-                .components(separatedBy: .newlines)
-
-        }
-    }
+                .components(separatedBy: .newlines))
 }

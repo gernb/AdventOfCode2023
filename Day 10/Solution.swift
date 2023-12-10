@@ -62,9 +62,8 @@ enum Part1 {
         }
     }
 
-    static func run(_ source: InputData) {
-        guard source != .example3 else { return }
-        let tiles = loadTiles(from: source.data)
+    static func run(_ source: (name: String, lines: [String])) {
+        let tiles = loadTiles(from: source.lines)
         let start = tiles.first(where: { $1 == .start })!.key
         var count = 1
         var visited: Set<Coordinate> = [start]
@@ -75,7 +74,7 @@ enum Part1 {
             coord = tiles[next]!.connections(from: next).filter { visited.contains($0) == false }.first
         }
 
-        print("Part 1 (\(source)): \(count / 2)")
+        print("Part 1 (\(source.name)): \(count / 2)")
     }
 }
 
@@ -95,9 +94,8 @@ extension Collection where Element: Comparable {
 }
 
 enum Part2 {
-    static func run(_ source: InputData) {
-        guard source == .example3 || source == .challenge else { return }
-        var tiles = loadTiles(from: source.data)
+    static func run(_ source: (name: String, lines: [String])) {
+        var tiles = loadTiles(from: source.lines)
         let start = tiles.first(where: { $1 == .start })!.key
         var mainLoop: Set<Coordinate> = [start]
         var coord = Part1.connections(from: start, in: tiles).first
@@ -153,6 +151,6 @@ enum Part2 {
             }
         }
 
-        print("Part 2 (\(source)): \(count)")
+        print("Part 2 (\(source.name)): \(count)")
     }
 }

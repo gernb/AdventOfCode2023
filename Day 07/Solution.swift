@@ -85,14 +85,14 @@ extension Hand {
 }
 
 enum Part1 {
-    static func run(_ source: InputData) {
-        let hands = source.data.map(Hand.init)
+    static func run(_ source: (name: String, lines: [String])) {
+        let hands = source.lines.map(Hand.init)
         let sortedHands = hands.sorted()
         let sum = sortedHands.enumerated().reduce(0) { result, pair in
             result + pair.element.bid * (pair.offset + 1)
         }
 
-        print("Part 1 (\(source)): \(sum)")
+        print("Part 1 (\(source.name)): \(sum)")
     }
 }
 
@@ -160,13 +160,13 @@ extension Hand {
 }
 
 enum Part2 {
-    static func run(_ source: InputData) {
-        let hands = source.data.map(Hand.init)
+    static func run(_ source: (name: String, lines: [String])) {
+        let hands = source.lines.map(Hand.init)
         let sortedHands = hands.sorted(by: Hand.part2Sort(lhs:rhs:))
         let sum = sortedHands.enumerated().reduce(0) { result, pair in
             result + pair.element.bid * (pair.offset + 1)
         }
 
-        print("Part 2 (\(source)): \(sum)")
+        print("Part 2 (\(source.name)): \(sum)")
     }
 }

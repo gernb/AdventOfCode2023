@@ -77,21 +77,21 @@ extension Almanac {
 }
 
 enum Part1 {
-    static func run(_ source: InputData) {
-        let input = source.data.split(separator: "")
+    static func run(_ source: (name: String, lines: [String])) {
+        let input = source.lines.split(separator: "")
         let seeds = input.first!.first!.split(separator: " ").compactMap { Int(String($0)) }
         let almanac = Almanac(input.dropFirst())
         let locations = seeds.map { almanac.location(for: $0) }
 
-        print("Part 1 (\(source)): \(locations.min()!)")
+        print("Part 1 (\(source.name)): \(locations.min()!)")
     }
 }
 
 // MARK: - Part 2
 
 enum Part2 {
-    static func run(_ source: InputData) {
-        let input = source.data.split(separator: "")
+    static func run(_ source: (name: String, lines: [String])) {
+        let input = source.lines.split(separator: "")
         let seedPairs = input.first!.first!.split(separator: " ").compactMap { Int(String($0)) }
         let almanac = Almanac(input.dropFirst())
         var minLocation = Int.max
@@ -104,6 +104,6 @@ enum Part2 {
             print(".", terminator: "")
         }
 
-        print("\nPart 2 (\(source)): \(minLocation)")
+        print("\nPart 2 (\(source.name)): \(minLocation)")
     }
 }

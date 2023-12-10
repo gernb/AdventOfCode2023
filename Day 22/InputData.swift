@@ -7,22 +7,21 @@
 
 import Foundation
 
-enum InputData: String, CaseIterable {
+enum InputData {
     static let day = 22
+    static let part1 = [
+        Self.example,
+        Self.challenge,
+    ]
+    static let part2 = [
+        Self.example,
+        Self.challenge,
+    ]
 
-    case example, challenge
+    static let example = (name: "example", lines: """
+""".components(separatedBy: .newlines))
 
-    var data: [String] {
-        switch self {
-
-        case .example: return """
-""".components(separatedBy: .newlines)
-
-        case .challenge:
-            return try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath)
+    static let challenge = (name: "challenge", lines: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath)
                 .trimmingCharacters(in: .whitespacesAndNewlines)
-                .components(separatedBy: .newlines)
-
-        }
-    }
+                .components(separatedBy: .newlines))
 }

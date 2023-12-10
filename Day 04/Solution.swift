@@ -30,23 +30,23 @@ extension ScratchCard {
 }
 
 enum Part1 {
-    static func run(_ source: InputData) {
-        let cards = source.data.map(ScratchCard.init)
+    static func run(_ source: (name: String, lines: [String])) {
+        let cards = source.lines.map(ScratchCard.init)
         let matches = cards.map { card in
             card.numbers.filter { card.winningNumbers.contains($0) }
         }
         let total = matches.map { $0.count > 0 ? pow(2, ($0.count - 1)) : 0 }
             .reduce(0, +)
 
-        print("Part 1 (\(source)): \(total)")
+        print("Part 1 (\(source.name)): \(total)")
     }
 }
 
 // MARK: - Part 2
 
 enum Part2 {
-    static func run(_ source: InputData) {
-        let cards = source.data.map(ScratchCard.init)
+    static func run(_ source: (name: String, lines: [String])) {
+        let cards = source.lines.map(ScratchCard.init)
         var cardCounts = Array<Int>(repeating: 1, count: cards.count)
         let matches = cards.map { card in
             card.numbers.filter { card.winningNumbers.contains($0) }
@@ -58,6 +58,6 @@ enum Part2 {
             }
         }
 
-        print("Part 2 (\(source)): \(cardCounts.reduce(0, +))")
+        print("Part 2 (\(source.name)): \(cardCounts.reduce(0, +))")
     }
 }

@@ -5,6 +5,6 @@
 //
 
 print("Day \(InputData.day):")
-InputData.allCases.forEach(Part1.run)
+InputData.part1.forEach(Part1.run)
 print("")
-InputData.allCases.forEach(Part2.run)
+InputData.part2.forEach(Part2.run)
