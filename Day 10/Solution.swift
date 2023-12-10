@@ -44,14 +44,20 @@ struct Coordinate: Hashable {
     var adjacent: [Self] { [up, left, right, down] }
 }
 
-func loadTiles(from lines: [String]) -> [Coordinate: Tile] {
+func loadTiles(from lines: [String]) -> (tiles: [Coordinate: Tile], start: Coordinate) {
     var tiles: [Coordinate: Tile] = [:]
+    var start: Coordinate = .origin
     for (y, line) in lines.enumerated() {
         for (x, char) in line.enumerated() {
-            tiles[.init(x: x, y: y)] = Tile(rawValue: char)!
+            let c = Coordinate(x: x, y: y)
+            let tile = Tile(rawValue: char)!
+            tiles[c] = tile
+            if tile == .start {
+                start = c
+            }
         }
     }
-    return tiles
+    return (tiles, start)
 }
 
 enum Part1 {
@@ -62,19 +68,21 @@ enum Part1 {
         }
     }
 
-    static func run(_ source: (name: String, lines: [String])) {
-        let tiles = loadTiles(from: source.lines)
-        let start = tiles.first(where: { $1 == .start })!.key
-        var count = 1
+    static func loopCoordinates(start: Coordinate, tiles: [Coordinate: Tile]) -> Set<Coordinate> {
         var visited: Set<Coordinate> = [start]
         var coord = connections(from: start, in: tiles).first
         while let next = coord {
-            count += 1
             visited.insert(next)
             coord = tiles[next]!.connections(from: next).filter { visited.contains($0) == false }.first
         }
+        return visited
+    }
 
-        print("Part 1 (\(source.name)): \(count / 2)")
+    static func run(_ source: (name: String, lines: [String])) {
+        let (tiles, start) = loadTiles(from: source.lines)
+        let mainLoop = loopCoordinates(start: start, tiles: tiles)
+
+        print("Part 1 (\(source.name)): \(mainLoop.count / 2)")
     }
 }
 
@@ -94,16 +102,7 @@ extension Collection where Element: Comparable {
 }
 
 enum Part2 {
-    static func run(_ source: (name: String, lines: [String])) {
-        var tiles = loadTiles(from: source.lines)
-        let start = tiles.first(where: { $1 == .start })!.key
-        var mainLoop: Set<Coordinate> = [start]
-        var coord = Part1.connections(from: start, in: tiles).first
-        while let next = coord {
-            mainLoop.insert(next)
-            coord = tiles[next]!.connections(from: next).filter { mainLoop.contains($0) == false }.first
-        }
-
+    static func replaceStartWithPipe(start: Coordinate, tiles: inout [Coordinate: Tile]) {
         let adjacent = Set(Part1.connections(from: start, in: tiles))
         if adjacent == Set([start.up, start.down]) {
             tiles[start] = .vertical
@@ -119,38 +118,41 @@ enum Part2 {
             tiles[start] = .southWestBend
         }
         assert(tiles[start] != .start)
+    }
 
-        var count = 0
-        for y in tiles.yRange {
+    static func findInteriorTiles(tiles: [Coordinate: Tile], loop: Set<Coordinate>) -> Set<Coordinate> {
+        var result: Set<Coordinate> = []
+        let yRange = tiles.yRange
+        let xRange = tiles.xRange
+        for y in yRange {
             var isInside = false
             var prevBend: Tile?
-            for x in tiles.xRange {
+            for x in xRange {
                 let c = Coordinate(x: x, y: y)
-                if mainLoop.contains(c) {
-                    switch tiles[c] {
-                    case .vertical: isInside.toggle()
-                    case .southEastBend: prevBend = .southEastBend
-                    case .southWestBend:
-                        if prevBend! == .northEastBend {
-                            isInside.toggle()
-                        }
-                        prevBend = nil
-                    case .northEastBend: prevBend = .northEastBend
-                    case .northWestBend:
-                        if prevBend! == .southEastBend {
-                            isInside.toggle()
-                        }
-                        prevBend = nil
+                if loop.contains(c) {
+                    switch (tiles[c], prevBend) {
+                    case (.southEastBend, _): prevBend = .southEastBend
+                    case (.northEastBend, _): prevBend = .northEastBend
+                    case (.vertical, _): isInside.toggle()
+                    case (.southWestBend, .northEastBend): isInside.toggle()
+                    case (.northWestBend, .southEastBend): isInside.toggle()
                     default: break
                     }
-                } else {
-                    if isInside {
-                        count += 1
-                    }
+                } else if isInside {
+                    result.insert(c)
                 }
             }
         }
+        return result
+    }
 
-        print("Part 2 (\(source.name)): \(count)")
+    static func run(_ source: (name: String, lines: [String])) {
+        var (tiles, start) = loadTiles(from: source.lines)
+        let mainLoop = Part1.loopCoordinates(start: start, tiles: tiles)
+
+        replaceStartWithPipe(start: start, tiles: &tiles)
+        let inside = findInteriorTiles(tiles: tiles, loop: mainLoop)
+
+        print("Part 2 (\(source.name)): \(inside.count)")
     }
 }
