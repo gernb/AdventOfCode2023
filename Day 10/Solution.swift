@@ -63,6 +63,7 @@ enum Part1 {
     }
 
     static func run(_ source: InputData) {
+        guard source != .example3 else { return }
         let tiles = loadTiles(from: source.data)
         let start = tiles.first(where: { $1 == .start })!.key
         var count = 1
@@ -80,10 +81,78 @@ enum Part1 {
 
 // MARK: - Part 2
 
+extension Dictionary where Key == Coordinate, Value == Tile {
+    var xRange: ClosedRange<Int> { keys.map { $0.x }.range() }
+    var yRange: ClosedRange<Int> { keys.map { $0.y }.range() }
+}
+
+extension Collection where Element: Comparable {
+    func range() -> ClosedRange<Element> {
+        precondition(count > 0)
+        let sorted = self.sorted()
+        return sorted.first! ... sorted.last!
+    }
+}
+
 enum Part2 {
     static func run(_ source: InputData) {
-        let input = source.data
+        guard source == .example3 || source == .challenge else { return }
+        var tiles = loadTiles(from: source.data)
+        let start = tiles.first(where: { $1 == .start })!.key
+        var mainLoop: Set<Coordinate> = [start]
+        var coord = Part1.connections(from: start, in: tiles).first
+        while let next = coord {
+            mainLoop.insert(next)
+            coord = tiles[next]!.connections(from: next).filter { mainLoop.contains($0) == false }.first
+        }
 
-        print("Part 2 (\(source)):")
+        let adjacent = Set(Part1.connections(from: start, in: tiles))
+        if adjacent == Set([start.up, start.down]) {
+            tiles[start] = .vertical
+        } else if adjacent == Set([start.left, start.right]) {
+            tiles[start] = .horizontal
+        } else if adjacent == Set([start.up, start.right]) {
+            tiles[start] = .northEastBend
+        } else if adjacent == Set([start.up, start.left]) {
+            tiles[start] = .northWestBend
+        } else if adjacent == Set([start.down, start.right]) {
+            tiles[start] = .southEastBend
+        } else if adjacent == Set([start.down, start.left]) {
+            tiles[start] = .southWestBend
+        }
+        assert(tiles[start] != .start)
+
+        var count = 0
+        for y in tiles.yRange {
+            var isInside = false
+            var prevBend: Tile?
+            for x in tiles.xRange {
+                let c = Coordinate(x: x, y: y)
+                if mainLoop.contains(c) {
+                    switch tiles[c] {
+                    case .vertical: isInside.toggle()
+                    case .southEastBend: prevBend = .southEastBend
+                    case .southWestBend:
+                        if prevBend! == .northEastBend {
+                            isInside.toggle()
+                        }
+                        prevBend = nil
+                    case .northEastBend: prevBend = .northEastBend
+                    case .northWestBend:
+                        if prevBend! == .southEastBend {
+                            isInside.toggle()
+                        }
+                        prevBend = nil
+                    default: break
+                    }
+                } else {
+                    if isInside {
+                        count += 1
+                    }
+                }
+            }
+        }
+
+        print("Part 2 (\(source)): \(count)")
     }
 }
