@@ -10,12 +10,25 @@ import Foundation
 enum InputData: String, CaseIterable {
     static let day = 10
 
-    case example, challenge
+    case example, example2, challenge
 
     var data: [String] {
         switch self {
 
         case .example: return """
+-L|F7
+7S-7|
+L|7||
+-L-J|
+L|-JF
+""".components(separatedBy: .newlines)
+
+        case .example2: return """
+7-F7-
+.FJ|7
+SJLL7
+|F--J
+LJ.LJ
 """.components(separatedBy: .newlines)
 
         case .challenge:
