@@ -7,36 +7,43 @@
 
 import Foundation
 
-enum InputData {
+struct InputData: CustomStringConvertible {
     static let day = 10
-    static let part1 = [
-        Self.example,
-        Self.example2,
-        Self.challenge,
-    ]
-    static let part2 = [
-        Self.example3,
-        Self.example4,
-        Self.challenge,
-    ]
+    static let part1: [Self] = [.example, .example2, .challenge]
+    static let part2: [Self] = [.example3, .example4, .challenge]
 
-    static let example = (name: "example", lines: """
+    let name: String
+    let data: String
+
+    var lines: [String] { data.components(separatedBy: .newlines) }
+    var description: String { name }
+
+    static let example = Self(
+        name: "example",
+        data:
+"""
 -L|F7
 7S-7|
 L|7||
 -L-J|
 L|-JF
-""".components(separatedBy: .newlines))
+""")
 
-    static let example2 = (name: "example2", lines: """
+    static let example2 = Self(
+        name: "example2",
+        data:
+"""
 7-F7-
 .FJ|7
 SJLL7
 |F--J
 LJ.LJ
-""".components(separatedBy: .newlines))
+""")
 
-    static let example3 = (name: "example3", lines: """
+    static let example3 = Self(
+        name: "example3",
+        data:
+"""
 ...........
 .S-------7.
 .|F-----7|.
@@ -46,9 +53,12 @@ LJ.LJ
 .|..|.|..|.
 .L--J.L--J.
 ...........
-""".components(separatedBy: .newlines))
+""")
 
-    static let example4 = (name: "example4", lines: """
+    static let example4 = Self(
+        name: "example4",
+        data:
+"""
 FF7FSF7F7F7F7F7F---7
 L|LJ||||||||||||F--J
 FL-7LJLJ||||||LJL-77
@@ -59,9 +69,10 @@ L---JF-JLJ.||-FJLJJ7
 7-L-JL7||F7|L7F-7F7|
 L.L7LFJ|||||FJL7||LJ
 L7JLJL-JLJLJL--JLJ.L
-""".components(separatedBy: .newlines))
+""")
 
-    static let challenge = (name: "challenge", lines: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath)
-                .trimmingCharacters(in: .whitespacesAndNewlines)
-                .components(separatedBy: .newlines))
+    static let challenge = Self(
+        name: "challenge",
+        data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
+    )
 }

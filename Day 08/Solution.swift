@@ -36,7 +36,8 @@ enum Part1 {
             result[String(parts[0])] = Map(pair: String(parts[1]))
         }
     }
-    static func run(_ source: (name: String, lines: [String])) {
+
+    static func run(_ source: InputData) {
         let instructions = source.lines[0].map(String.init)
         let maps = loadMaps(source.lines.dropFirst(2))
 
@@ -50,7 +51,7 @@ enum Part1 {
             idx = (idx + 1) % count
         }
 
-        print("Part 1 (\(source.name)): \(steps)")
+        print("Part 1 (\(source)): \(steps)")
     }
 }
 
@@ -87,7 +88,7 @@ enum Part2 {
         return steps
     }
 
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let instructions = source.lines[0].map(String.init)
         let maps = Part1.loadMaps(source.lines.dropFirst(2))
 
@@ -95,6 +96,6 @@ enum Part2 {
         let steps = locations.map { countSteps(from: $0, instructions: instructions, maps: maps) }
         let result = steps.reduce(1, lcm(_:_:))
 
-        print("Part 2 (\(source.name)): \(result)")
+        print("Part 2 (\(source)): \(result)")
     }
 }

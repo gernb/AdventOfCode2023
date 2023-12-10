@@ -48,13 +48,13 @@ enum Part1 {
         .blue: 14,
     ]
 
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let games = source.lines.map(Game.init)
         let possibleGameIds = games.compactMap { game in
             game.isPossible(with: Self.bag) ? game.id : nil
         }
 
-        print("Part 1 (\(source.name)): \(possibleGameIds.reduce(0, +))")
+        print("Part 1 (\(source)): \(possibleGameIds.reduce(0, +))")
     }
 }
 
@@ -79,10 +79,10 @@ extension Game {
 }
 
 enum Part2 {
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let games = source.lines.map(Game.init)
         let powers = games.map(\.minimumBag.power)
 
-        print("Part 2 (\(source.name)): \(powers.reduce(0, +))")
+        print("Part 2 (\(source)): \(powers.reduce(0, +))")
     }
 }

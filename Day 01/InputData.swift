@@ -7,25 +7,31 @@
 
 import Foundation
 
-enum InputData {
-    static let day = 11
-    static let part1 = [
-        Self.example,
-        Self.challenge,
-    ]
-    static let part2 = [
-        Self.example2,
-        Self.challenge,
-    ]
+struct InputData: CustomStringConvertible {
+    static let day = 1
+    static let part1: [Self] = [.example, .challenge]
+    static let part2: [Self] = [.example2, .challenge]
 
-    static let example = (name: "example", lines: """
+    let name: String
+    let data: String
+
+    var lines: [String] { data.components(separatedBy: .newlines) }
+    var description: String { name }
+
+    static let example = Self(
+        name: "example",
+        data:
+"""
 1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
 treb7uchet
-""".components(separatedBy: .newlines))
+""")
 
-    static let example2 = (name: "example2", lines: """
+    static let example2 = Self(
+        name: "example2",
+        data:
+"""
 two1nine
 eightwothree
 abcone2threexyz
@@ -33,9 +39,10 @@ xtwone3four
 4nineeightseven2
 zoneight234
 7pqrstsixteen
-""".components(separatedBy: .newlines))
+""")
 
-    static let challenge = (name: "challenge", lines: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath)
-        .trimmingCharacters(in: .whitespacesAndNewlines)
-        .components(separatedBy: .newlines))
+    static let challenge = Self(
+        name: "challenge",
+        data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
+    )
 }

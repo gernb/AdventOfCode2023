@@ -58,7 +58,7 @@ extension Collection where Element: Comparable {
 }
 
 enum Part1 {
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let schematic = loadSchematic(from: source.lines)
         var partNumbers: [Int] = []
         var numberAccumulator = 0
@@ -85,7 +85,7 @@ enum Part1 {
             isPartNumber = false
         }
 
-        print("Part 1 (\(source.name)): \(partNumbers.reduce(0, +))")
+        print("Part 1 (\(source)): \(partNumbers.reduce(0, +))")
     }
 }
 
@@ -104,7 +104,7 @@ extension Dictionary where Key == Coordinate, Value == String {
 }
 
 enum Part2 {
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let schematic = loadSchematic(from: source.lines)
         var gearRatios: [Int] = []
         for y in schematic.yRange {
@@ -153,6 +153,6 @@ enum Part2 {
             }
         }
 
-        print("Part 2 (\(source.name)): \(gearRatios.reduce(0, +))")
+        print("Part 2 (\(source)): \(gearRatios.reduce(0, +))")
     }
 }

@@ -27,7 +27,7 @@ enum Part1 {
         return nextValue
     }
 
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         var historyLines = source.lines.map { line in
             line.split(separator: " ").map { Int(String($0))! }
         }
@@ -36,7 +36,7 @@ enum Part1 {
         }
 
         let sum = historyLines.map { $0.last! }.reduce(0, +)
-        print("Part 1 (\(source.name)): \(sum)")
+        print("Part 1 (\(source)): \(sum)")
     }
 }
 
@@ -62,13 +62,13 @@ enum Part2 {
         return previousValue
     }
 
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let historyLines = source.lines.map { line in
             line.split(separator: " ").map { Int(String($0))! }
         }
         let previousValues = historyLines.map(previousValue(for:))
 
         let sum = previousValues.reduce(0, +)
-        print("Part 2 (\(source.name)): \(sum)")
+        print("Part 2 (\(source)): \(sum)")
     }
 }

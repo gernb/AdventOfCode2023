@@ -7,21 +7,25 @@
 
 import Foundation
 
-enum InputData {
+struct InputData: CustomStringConvertible {
     static let day = 22
-    static let part1 = [
-        Self.example,
-        Self.challenge,
-    ]
-    static let part2 = [
-        Self.example,
-        Self.challenge,
-    ]
+    static let part1: [Self] = [.example, .challenge]
+    static let part2: [Self] = [.example, .challenge]
 
-    static let example = (name: "example", lines: """
-""".components(separatedBy: .newlines))
+    let name: String
+    let data: String
 
-    static let challenge = (name: "challenge", lines: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath)
-                .trimmingCharacters(in: .whitespacesAndNewlines)
-                .components(separatedBy: .newlines))
+    var lines: [String] { data.components(separatedBy: .newlines) }
+    var description: String { name }
+
+    static let example = Self(
+        name: "example",
+        data:
+"""
+""")
+
+    static let challenge = Self(
+        name: "challenge",
+        data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
+    )
 }

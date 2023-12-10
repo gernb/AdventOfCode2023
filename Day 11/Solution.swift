@@ -8,15 +8,15 @@
 // MARK: - Part 1
 
 enum Part1 {
-    static func run(_ source: (name: String, lines: [String])) {
-        print("Part 1 (\(source.name)):")
+    static func run(_ source: InputData) {
+        print("Part 1 (\(source)):")
     }
 }
 
 // MARK: - Part 2
 
 enum Part2 {
-    static func run(_ source: (name: String, lines: [String])) {
-        print("Part 2 (\(source.name)):")
+    static func run(_ source: InputData) {
+        print("Part 2 (\(source)):")
     }
 }

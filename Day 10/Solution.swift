@@ -78,11 +78,11 @@ enum Part1 {
         return visited
     }
 
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let (tiles, start) = loadTiles(from: source.lines)
         let mainLoop = loopCoordinates(start: start, tiles: tiles)
 
-        print("Part 1 (\(source.name)): \(mainLoop.count / 2)")
+        print("Part 1 (\(source)): \(mainLoop.count / 2)")
     }
 }
 
@@ -146,13 +146,13 @@ enum Part2 {
         return result
     }
 
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         var (tiles, start) = loadTiles(from: source.lines)
         let mainLoop = Part1.loopCoordinates(start: start, tiles: tiles)
 
         replaceStartWithPipe(start: start, tiles: &tiles)
         let inside = findInteriorTiles(tiles: tiles, loop: mainLoop)
 
-        print("Part 2 (\(source.name)): \(inside.count)")
+        print("Part 2 (\(source)): \(inside.count)")
     }
 }

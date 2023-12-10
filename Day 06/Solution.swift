@@ -14,26 +14,25 @@ enum Part1 {
         }
     }
 
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let times = source.lines[0].split(separator: " ").compactMap { Int(String($0)) }
         let maxDistances = source.lines[1].split(separator: " ").compactMap { Int(String($0)) }
-        let maxTime = times.max()!
         let winningSolutions = zip(times, maxDistances).map { (time: Int, distance: Int) in
             distances(for: time).filter { $0 > distance }.count
         }
 
-        print("Part 1 (\(source.name)): \(winningSolutions.reduce(1, *))")
+        print("Part 1 (\(source)): \(winningSolutions.reduce(1, *))")
     }
 }
 
 // MARK: - Part 2
 
 enum Part2 {
-    static func run(_ source: (name: String, lines: [String])) {
+    static func run(_ source: InputData) {
         let time = Int(source.lines[0].split(separator: " ").dropFirst().joined())!
         let distance = Int(source.lines[1].split(separator: " ").dropFirst().joined())!
         let winningSolutions = Part1.distances(for: time).filter { $0 > distance }
 
-        print("Part 2 (\(source.name)): \(winningSolutions.count)")
+        print("Part 2 (\(source)): \(winningSolutions.count)")
     }
 }
