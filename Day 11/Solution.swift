@@ -83,7 +83,28 @@ enum Part1 {
 // MARK: - Part 2
 
 enum Part2 {
+    static func calculateDrifts(image: [[Character]]) -> (drifts: [Int], distances: [Int]) {
+        var galaxyPairs = Part1.galaxyLocations(in: image).combinations(of: 2)
+        let initialDistances = galaxyPairs.map { $0[0].distance(to: $0[1]) }
+
+        let expanded = Part1.expandGalaxies(image)
+        galaxyPairs = Part1.galaxyLocations(in: expanded).combinations(of: 2)
+        let expandedDistances = galaxyPairs.map { $0[0].distance(to: $0[1]) }
+
+        return (zip(initialDistances, expandedDistances).map { $0.1 - $0.0 }, initialDistances)
+    }
+
     static func run(_ source: InputData) {
-        print("Part 2 (\(source)):")
+        let image = source.lines.map(Array.init)
+        let (drifts, initialDistances) = calculateDrifts(image: image)
+        if source.name == "example" {
+            for n in [10, 100] {
+                let distances = zip(initialDistances, drifts).map { $0.0 + $0.1 * (n - 1) }
+                print("Part 2 (\(source)): n=\(n) \(distances.reduce(0, +))")
+            }
+        } else {
+            let distances = zip(initialDistances, drifts).map { $0.0 + $0.1 * (1_000_000 - 1) }
+            print("Part 2 (\(source)): \(distances.reduce(0, +))")
+        }
     }
 }
