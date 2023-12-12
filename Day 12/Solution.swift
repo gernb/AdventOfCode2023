@@ -21,25 +21,36 @@ extension Record {
 }
 
 struct State: Hashable {
+    static let initial = Self(conditionIdx: 0, groupIdx: 0, hashCount: 0)
+
     var conditionIdx: Int
     var groupIdx: Int
-    var groupCount: Int
+    var hashCount: Int
+
+    func next(_ builder: (inout Self) -> Void = { _ in }) -> Self {
+        var new = self
+        builder(&new)
+        new.conditionIdx = self.conditionIdx + 1
+        return new
+    }
 }
 
 enum Part1 {
     static func arrangements(_ record: Record) -> Int {
         var memo: [State: Int] = [:]
+        let condition = record.condition
+        let groups = record.groups
 
-        func arrangements(_ record: Record, _ state: State) -> Int {
+        func arrangements(_ state: State) -> Int {
             if let result = memo[state] {
                 return result
             }
-            if state.conditionIdx == record.condition.count {
-                if state.groupIdx == record.groups.count && state.groupCount == 0 {
+            if state.conditionIdx == condition.count {
+                if state.groupIdx == groups.count && state.hashCount == 0 {
                     memo[state] = 1
                     return 1
                 }
-                if state.groupIdx == record.groups.count - 1 && state.groupCount == record.groups[state.groupIdx] {
+                if state.groupIdx == groups.count - 1 && state.hashCount == groups[state.groupIdx] {
                     memo[state] = 1
                     return 1
                 }
@@ -48,25 +59,26 @@ enum Part1 {
             }
 
             var result = 0
-            if record.condition[state.conditionIdx] == "." || record.condition[state.conditionIdx] == "?" {
-                if state.groupCount == 0 {
-                    let new = State(conditionIdx: state.conditionIdx + 1, groupIdx: state.groupIdx, groupCount: 0)
-                    result += arrangements(record, new)
-                } else if state.groupCount > 0 && state.groupIdx < record.groups.count && state.groupCount == record.groups[state.groupIdx] {
-                    let new = State(conditionIdx: state.conditionIdx + 1, groupIdx: state.groupIdx + 1, groupCount: 0)
-                    result += arrangements(record, new)
+            let char = condition[state.conditionIdx]
+            if char == "." || char == "?" {
+                if state.hashCount == 0 {
+                    result += arrangements(state.next())
+                } else if state.groupIdx < groups.count && state.hashCount == groups[state.groupIdx] {
+                    result += arrangements(state.next {
+                        $0.groupIdx += 1
+                        $0.hashCount = 0
+                    })
                 }
             }
-            if record.condition[state.conditionIdx] == "#" || record.condition[state.conditionIdx] == "?" {
-                let new = State(conditionIdx: state.conditionIdx + 1, groupIdx: state.groupIdx, groupCount: state.groupCount + 1)
-                result += arrangements(record, new)
+            if char == "#" || char == "?" {
+                result += arrangements(state.next { $0.hashCount += 1 })
             }
 
             memo[state] = result
             return result
         }
 
-        return arrangements(record, State(conditionIdx: 0, groupIdx: 0, groupCount: 0))
+        return arrangements(.initial)
     }
 
     static func run(_ source: InputData) {
