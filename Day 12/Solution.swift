@@ -8,78 +8,70 @@
 // MARK: - Part 1
 
 struct Record {
-    let condition: String
+    let condition: [Character]
     let groups: [Int]
-
-    func matches(_ condition: String) -> Bool {
-        condition.split(separator: ".").map(\.count) == groups
-    }
 }
 extension Record {
     init(_ line: String) {
         let parts = line.split(separator: " ").map(String.init)
-        let condition = parts[0]
+        let condition = Array(parts[0])
         let groups = parts[1].split(separator: ",").map { Int(String($0))! }
         self.init(condition: condition, groups: groups)
     }
 }
 
+struct State: Hashable {
+    var conditionIdx: Int
+    var groupIdx: Int
+    var groupCount: Int
+}
+
 enum Part1 {
-    static func arrangements(_ condition: String, _ groups: [Int]) -> Int {
-        var condition = condition.trimmingCharacters(in: ["."])
-        if condition.count < (groups.reduce(0, +) + groups.count - 1) {
-            return 0
-        }
-        if groups.isEmpty && condition.isEmpty {
-            return 1
-        }
-        if groups.isEmpty && condition.allSatisfy({ $0 == "." || $0 == "?" }) {
-            return 1
-        }
-        if groups.isEmpty || condition.isEmpty {
-            return 0
+    static func arrangements(_ record: Record) -> Int {
+        var memo: [State: Int] = [:]
+
+        func arrangements(_ record: Record, _ state: State) -> Int {
+            if let result = memo[state] {
+                return result
+            }
+            if state.conditionIdx == record.condition.count {
+                if state.groupIdx == record.groups.count && state.groupCount == 0 {
+                    memo[state] = 1
+                    return 1
+                }
+                if state.groupIdx == record.groups.count - 1 && state.groupCount == record.groups[state.groupIdx] {
+                    memo[state] = 1
+                    return 1
+                }
+                memo[state] = 0
+                return 0
+            }
+
+            var result = 0
+            if record.condition[state.conditionIdx] == "." || record.condition[state.conditionIdx] == "?" {
+                if state.groupCount == 0 {
+                    let new = State(conditionIdx: state.conditionIdx + 1, groupIdx: state.groupIdx, groupCount: 0)
+                    result += arrangements(record, new)
+                } else if state.groupCount > 0 && state.groupIdx < record.groups.count && state.groupCount == record.groups[state.groupIdx] {
+                    let new = State(conditionIdx: state.conditionIdx + 1, groupIdx: state.groupIdx + 1, groupCount: 0)
+                    result += arrangements(record, new)
+                }
+            }
+            if record.condition[state.conditionIdx] == "#" || record.condition[state.conditionIdx] == "?" {
+                let new = State(conditionIdx: state.conditionIdx + 1, groupIdx: state.groupIdx, groupCount: state.groupCount + 1)
+                result += arrangements(record, new)
+            }
+
+            memo[state] = result
+            return result
         }
 
-        var groups = groups
-        var result = 0
-        let char = condition.removeFirst()
-        if char == "?" {
-            result += arrangements(condition, groups)
-        }
-        let hashNeeded = groups.removeFirst()
-        var hashCount = 1
-        while true {
-            while condition.isEmpty == false, condition.first == "#" {
-                condition.removeFirst()
-                hashCount += 1
-            }
-            if hashCount > hashNeeded {
-                return result
-            }
-            if hashCount == hashNeeded {
-                if condition.isEmpty {
-                    return result + arrangements(condition, groups)
-                }
-                condition.removeFirst()
-                return result + arrangements(condition, groups)
-            }
-            if condition.first == "." {
-                return result
-            }
-            if condition.isEmpty {
-                return result
-            }
-            condition.removeFirst()
-            hashCount += 1
-        }
-        return result
+        return arrangements(record, State(conditionIdx: 0, groupIdx: 0, groupCount: 0))
     }
 
     static func run(_ source: InputData) {
         let records = source.lines.map(Record.init)
-        let counts = records.map { record in
-            arrangements(record.condition, record.groups)
-        }
+        let counts = records.map(arrangements)
 
         print("Part 1 (\(source)): \(counts.reduce(0, +))")
     }
@@ -91,16 +83,12 @@ enum Part2 {
     static func unfold(_ record: Record) -> Record {
         let condition = Array(repeating: record.condition, count: 5).joined(separator: "?")
         let groups = Array(repeating: record.groups, count: 5).flatMap { $0 }
-        return .init(condition: condition, groups: groups)
+        return .init(condition: Array(condition), groups: groups)
     }
 
     static func run(_ source: InputData) {
         let records = source.lines.map(Record.init).map(unfold)
-
-        let counts = records.enumerated().map { (n: Int, record: Record) in
-//            print(n)
-            return Part1.arrangements(record.condition, record.groups)
-        }
+        let counts = records.map(Part1.arrangements)
 
         print("Part 2 (\(source)): \(counts.reduce(0, +))")
     }
