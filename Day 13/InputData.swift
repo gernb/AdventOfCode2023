@@ -22,6 +22,21 @@ struct InputData: CustomStringConvertible {
         name: "example",
         data:
 """
+#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.
+
+#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#
 """)
 
     static let challenge = Self(
