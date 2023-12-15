@@ -24,51 +24,47 @@ enum Part1 {
 
 // MARK: - Part 2
 
-enum Operation: String {
-    case dash = "-"
-    case equals = "="
-}
+enum Operation {
+    case remove(String)
+    case add(String, Int)
 
-struct Instruction: Equatable {
-    let label: String
-    let focalLen: Int
-    let operation: Operation
-
-    var hash: Int { Part1.hash(label) }
-
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.label == rhs.label
+    var hash: Int {
+        switch self {
+        case .remove(let label): Part1.hash(label)
+        case .add(let label, _): Part1.hash(label)
+        }
     }
 }
-extension Instruction {
+extension Operation {
     init(_ string: any StringProtocol) {
         if string.hasSuffix("-") {
             let label = String(string.dropLast())
-            self.init(label: label, focalLen: 0, operation: .dash)
+            self = .remove(label)
         } else {
             let parts = string.split(separator: "=").map { String($0) }
+            let label = parts[0]
             let focalLen = Int(parts[1])!
-            self.init(label: parts[0], focalLen: focalLen, operation: .equals)
+            self = .add(label, focalLen)
         }
     }
 }
 
 enum Part2 {
     static func run(_ source: InputData) {
-        let instructions = source.lines.joined().split(separator: ",").map(Instruction.init)
-        let boxes: [Int: [Instruction]] = instructions.reduce(into: [:]) { result, instruction in
-            var list = result[instruction.hash, default: []]
-            switch instruction.operation {
-            case .dash:
-                list.removeAll(where: { $0 == instruction })
-            case .equals:
-                if let idx = list.firstIndex(of: instruction) {
-                    list[idx] = instruction
+        let operations = source.lines.joined().split(separator: ",").map(Operation.init)
+        let boxes: [Int: [(label: String, focalLen: Int)]] = operations.reduce(into: [:]) { result, op in
+            var list = result[op.hash, default: []]
+            switch op {
+            case .remove(let label):
+                list.removeAll(where: { $0.label == label })
+            case .add(let label, let focalLen):
+                if let idx = list.firstIndex(where: { $0.label == label }) {
+                    list[idx] = (label, focalLen)
                 } else {
-                    list.append(instruction)
+                    list.append((label, focalLen))
                 }
             }
-            result[instruction.hash] = list
+            result[op.hash] = list
         }
         let totalPower = boxes.reduce(0) { result, pair in
             let box = pair.key
