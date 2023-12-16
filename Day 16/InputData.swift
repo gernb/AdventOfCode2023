@@ -21,8 +21,18 @@ struct InputData: CustomStringConvertible {
     static let example = Self(
         name: "example",
         data:
-"""
-""")
+#"""
+.|...\....
+|.-.\.....
+.....|-...
+........|.
+..........
+.........\
+..../.\\..
+.-.-/..|..
+.|....-|.\
+..//.|....
+"""#)
 
     static let challenge = Self(
         name: "challenge",
