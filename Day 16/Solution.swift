@@ -9,24 +9,6 @@
 
 enum Heading {
     case left, up, right, down
-
-    var left: Self {
-        switch self {
-        case .left: return .down
-        case .up: return .left
-        case .right: return .up
-        case .down: return .right
-        }
-    }
-
-    var right: Self {
-        switch self {
-        case .left: return .up
-        case .up: return .right
-        case .right: return .down
-        case .down: return .left
-        }
-    }
 }
 
 struct Coordinate: Hashable, CustomStringConvertible {
@@ -63,12 +45,12 @@ func loadLayout(_ lines: [String]) -> [Coordinate: Character] {
 }
 
 enum Part1 {
-    static func traceBeam(in layout: [Coordinate: Character]) -> [Coordinate: Int] {
-        struct State: Hashable {
-            let coord: Coordinate
-            let heading: Heading
-        }
+    struct State: Hashable {
+        let coord: Coordinate
+        let heading: Heading
+    }
 
+    static func traceBeam(in layout: [Coordinate: Character], from state: State = .init(coord: .origin, heading: .right)) -> [Coordinate: Int] {
         var seen: Set<State> = []
         var counts: [Coordinate: Int] = [:]
         func move(to state: State) {
@@ -115,7 +97,7 @@ enum Part1 {
             }
         }
 
-        move(to: .init(coord: .origin, heading: .right))
+        move(to: state)
         return counts
     }
 
@@ -131,6 +113,24 @@ enum Part1 {
 
 enum Part2 {
     static func run(_ source: InputData) {
-        print("Part 2 (\(source)):")
+        let layout = loadLayout(source.lines)
+        let yMax = source.lines.count - 1
+        let xMax = source.lines[0].count - 1
+        var counts: [Int] = []
+
+        for x in 0 ... xMax {
+            var energized = Part1.traceBeam(in: layout, from: .init(coord: .init(x: x, y: 0), heading: .down)).values.count
+            counts.append(energized)
+            energized = Part1.traceBeam(in: layout, from: .init(coord: .init(x: x, y: yMax), heading: .up)).values.count
+            counts.append(energized)
+        }
+        for y in 0 ... yMax {
+            var energized = Part1.traceBeam(in: layout, from: .init(coord: .init(x: 0, y: y), heading: .right)).values.count
+            counts.append(energized)
+            energized = Part1.traceBeam(in: layout, from: .init(coord: .init(x: xMax, y: y), heading: .left)).values.count
+            counts.append(energized)
+        }
+
+        print("Part 2 (\(source)): \(counts.max()!)")
     }
 }
