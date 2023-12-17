@@ -62,13 +62,26 @@ func loadMap(_ lines: [String]) -> [Coordinate: Int] {
 
 enum Part1 {
     struct State: Hashable {
-        var coord: Coordinate
-        var straightCount: Int
+        let coord: Coordinate
+        let heading: Heading
+        let straightCount: Int
 
-        var heading: Heading
+        static var initial: Self { .init(coord: .origin, heading: .right, straightCount: 1) }
+        var left: Self {
+            let pair = coord.left(heading: heading)
+            return .init(coord: pair.0, heading: pair.1, straightCount: 1)
+        }
+        var right: Self {
+            let pair = coord.right(heading: heading)
+            return .init(coord: pair.0, heading: pair.1, straightCount: 1)
+        }
+        var straight: Self {
+            let pair = coord.straight(heading: heading)
+            return .init(coord: pair.0, heading: pair.1, straightCount: straightCount + 1)
+        }
     }
 
-    static func findShortestDistance<Node: Hashable>(from start: Node, using getNextNodes: ((Node) -> [(node: Node, cost: Int)]?)) -> Int? {
+    static func findShortestDistance<Node: Hashable>(from start: Node, using getNextNodes: ((Node) -> [(node: Node, cost: Int)]?)) -> Int {
         var visited: [Node: Int] = [:]
         var queue: [Node: Int] = [start: 0]
 
@@ -91,27 +104,23 @@ enum Part1 {
         }
 
         // No possible path exists
-        return nil
+        fatalError()
     }
 
     static func run(_ source: InputData) {
         let cityMap = loadMap(source.lines)
         let destination = Coordinate(x: source.lines[0].count - 1, y: source.lines.count - 1)
-        let initial = State(coord: .origin, straightCount: 1, heading: .right)
-        let heatLoss = findShortestDistance(from: initial) { state in
+        let heatLoss = findShortestDistance(from: State.initial) { state in
             guard state.coord != destination else { return nil }
-            var nextStates = [state.coord.left(heading: state.heading), state.coord.right(heading: state.heading)]
-                .map { State(coord: $0.0, straightCount: 1, heading: $0.1) }
-            if state.straightCount < 3 {
-                let straight = state.coord.straight(heading: state.heading)
-                nextStates.append(.init(coord: straight.0, straightCount: state.straightCount + 1, heading: straight.1))
-            }
+            let nextStates = state.straightCount < 3
+                ? [state.left, state.straight, state.right]
+                : [state.left, state.right]
             return nextStates.compactMap {
                 guard let heat = cityMap[$0.coord] else { return nil }
                 return ($0, heat)
             }
         }
-        print("Part 1 (\(source)): \(heatLoss!)")
+        print("Part 1 (\(source)): \(heatLoss)")
     }
 }
 
@@ -121,33 +130,23 @@ enum Part2 {
     static func run(_ source: InputData) {
         let cityMap = loadMap(source.lines)
         let destination = Coordinate(x: source.lines[0].count - 1, y: source.lines.count - 1)
-        let initial = Part1.State(coord: .origin, straightCount: 1, heading: .right)
-        let heatLoss = Part1.findShortestDistance(from: initial) { state in
-            if state.coord == destination {
-                if state.straightCount >= 4 {
-                    return nil
+        let heatLoss = Part1.findShortestDistance(from: Part1.State.initial) { state in
+            guard state.coord != destination else {
+                return state.straightCount >= 4 ? nil : []
+            }
+            let nextStates =
+                if state.straightCount < 4 {
+                    [state.straight]
+                } else if state.straightCount == 10 {
+                    [state.left, state.right]
                 } else {
-                    return []
+                    [state.left, state.straight, state.right]
                 }
-            }
-            var nextStates: [Part1.State]
-            if state.straightCount < 4 {
-                let straight = state.coord.straight(heading: state.heading)
-                nextStates = [.init(coord: straight.0, straightCount: state.straightCount + 1, heading: straight.1)]
-            } else if state.straightCount == 10 {
-                nextStates = [state.coord.left(heading: state.heading), state.coord.right(heading: state.heading)]
-                    .map { Part1.State(coord: $0.0, straightCount: 1, heading: $0.1) }
-            } else {
-                nextStates = [state.coord.left(heading: state.heading), state.coord.right(heading: state.heading)]
-                    .map { Part1.State(coord: $0.0, straightCount: 1, heading: $0.1) }
-                let straight = state.coord.straight(heading: state.heading)
-                nextStates.append(.init(coord: straight.0, straightCount: state.straightCount + 1, heading: straight.1))
-            }
             return nextStates.compactMap {
                 guard let heat = cityMap[$0.coord] else { return nil }
                 return ($0, heat)
             }
         }
-        print("Part 2 (\(source)): \(heatLoss!)")
+        print("Part 2 (\(source)): \(heatLoss)")
     }
 }
