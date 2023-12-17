@@ -119,6 +119,35 @@ enum Part1 {
 
 enum Part2 {
     static func run(_ source: InputData) {
-        print("Part 2 (\(source)):")
+        let cityMap = loadMap(source.lines)
+        let destination = Coordinate(x: source.lines[0].count - 1, y: source.lines.count - 1)
+        let initial = Part1.State(coord: .origin, straightCount: 1, heading: .right)
+        let heatLoss = Part1.findShortestDistance(from: initial) { state in
+            if state.coord == destination {
+                if state.straightCount >= 4 {
+                    return nil
+                } else {
+                    return []
+                }
+            }
+            var nextStates: [Part1.State]
+            if state.straightCount < 4 {
+                let straight = state.coord.straight(heading: state.heading)
+                nextStates = [.init(coord: straight.0, straightCount: state.straightCount + 1, heading: straight.1)]
+            } else if state.straightCount == 10 {
+                nextStates = [state.coord.left(heading: state.heading), state.coord.right(heading: state.heading)]
+                    .map { Part1.State(coord: $0.0, straightCount: 1, heading: $0.1) }
+            } else {
+                nextStates = [state.coord.left(heading: state.heading), state.coord.right(heading: state.heading)]
+                    .map { Part1.State(coord: $0.0, straightCount: 1, heading: $0.1) }
+                let straight = state.coord.straight(heading: state.heading)
+                nextStates.append(.init(coord: straight.0, straightCount: state.straightCount + 1, heading: straight.1))
+            }
+            return nextStates.compactMap {
+                guard let heat = cityMap[$0.coord] else { return nil }
+                return ($0, heat)
+            }
+        }
+        print("Part 2 (\(source)): \(heatLoss!)")
     }
 }
