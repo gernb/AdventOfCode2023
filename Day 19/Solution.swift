@@ -99,23 +99,45 @@ enum Part1 {
 // MARK: - Part 2
 
 enum Part2 {
-    enum Operation {
-        case lessThan, greaterThan, always
-    }
+    struct State {
+        static let initial = Self(workflow: "in", x: 1 ... 4000, m: 1 ... 4000, a: 1 ... 4000, s: 1 ... 4000)
 
-    struct Rule: CustomStringConvertible {
-        let property: String
-        let op: Operation
-        let value: Int
-        let destination: String
+        var workflow: String
+        var x: ClosedRange<Int>
+        var m: ClosedRange<Int>
+        var a: ClosedRange<Int>
+        var s: ClosedRange<Int>
 
-        var description: String {
-            switch op {
-            case .always: "\(destination)"
-            case .lessThan: "\(property)<\(value):\(destination)"
-            case .greaterThan: "\(property)>\(value):\(destination)"
+        var isDeadEnd: Bool {
+            workflow == "R" || x.count == 0 || m.count == 0 || a.count == 0 || s.count == 0
+        }
+
+        mutating func apply(rule: Rule) -> State {
+            switch rule {
+            case let .always(destination):
+                var next = self
+                next.workflow = destination
+                return next
+            case let .lessThan(keyPath, value, destination):
+                defer { self[keyPath: keyPath] = self[keyPath: keyPath].clamped(to: value ... 4000) }
+                var next = self
+                next.workflow = destination
+                next[keyPath: keyPath] = next[keyPath: keyPath].clamped(to: 1 ... value - 1)
+                return next
+            case let.greaterThan(keyPath, value, destination):
+                defer { self[keyPath: keyPath] = self[keyPath: keyPath].clamped(to: 1 ... value) }
+                var next = self
+                next.workflow = destination
+                next[keyPath: keyPath] = next[keyPath: keyPath].clamped(to: value + 1 ... 4000)
+                return next
             }
         }
+    }
+
+    enum Rule {
+        case always(String)
+        case lessThan(WritableKeyPath<State, ClosedRange<Int>>, Int, String)
+        case greaterThan(WritableKeyPath<State, ClosedRange<Int>>, Int, String)
     }
 
     struct Workflow {
@@ -129,18 +151,25 @@ enum Part2 {
             let rules: [Rule] = tokens.map { token in
                 let tokens = token.components(separatedBy: ":")
                 if tokens.count == 1 {
-                    return .init(property: "", op: .always, value: 0, destination: tokens[0])
+                    return .always(tokens[0])
                 } else {
                     let destination = tokens[1]
                     var string = tokens[0]
-                    let property = String(string.removeFirst())
-                    let op: Operation = switch string.removeFirst() {
-                    case "<": .lessThan
-                    case ">": .greaterThan
+                    let property =
+                        switch string.removeFirst() {
+                        case "x": \State.x
+                        case "m": \State.m
+                        case "a": \State.a
+                        case "s": \State.s
+                        default: fatalError()
+                        }
+                    let op = string.removeFirst()
+                    let value = Int(string)!
+                    return switch op {
+                    case "<": .lessThan(property, value, destination)
+                    case ">": .greaterThan(property, value, destination)
                     default: fatalError()
                     }
-                    let value = Int(string)!
-                    return .init(property: property, op: op, value: value, destination: destination)
                 }
             }
             self.name = name
@@ -155,57 +184,20 @@ enum Part2 {
             result[workflow.name] = workflow
         }
 
-        func count(for destination: String, x: ClosedRange<Int>, m: ClosedRange<Int>, a: ClosedRange<Int>, s: ClosedRange<Int>) -> Int {
-            if destination == "R" {
+        func count(_ state: State) -> Int {
+            if state.isDeadEnd {
                 return 0
-            } else if destination == "A" {
-                return x.count * m.count * a.count * s.count
             }
-            let workflow = workflows[destination]!
-            var x = x
-            var m = m
-            var a = a
-            var s = s
-            var result = 0
-            for rule in workflow.rules {
-                switch (rule.op, rule.property) {
-                case (.always, _):
-                    result += count(for: rule.destination, x: x, m: m, a: a, s: s)
-
-                case (.lessThan, "x"):
-                    result += count(for: rule.destination, x: x.clamped(to: 1 ... rule.value - 1), m: m, a: a, s: s)
-                    x = x.clamped(to: rule.value ... 4000)
-                case (.lessThan, "m"):
-                    result += count(for: rule.destination, x: x, m: m.clamped(to: 1 ... rule.value - 1), a: a, s: s)
-                    m = m.clamped(to: rule.value ... 4000)
-                case (.lessThan, "a"):
-                    result += count(for: rule.destination, x: x, m: m, a: a.clamped(to: 1 ... rule.value - 1), s: s)
-                    a = a.clamped(to: rule.value ... 4000)
-                case (.lessThan, "s"):
-                    result += count(for: rule.destination, x: x, m: m, a: a, s: s.clamped(to: 1 ... rule.value - 1))
-                    s = s.clamped(to: rule.value ... 4000)
-
-                case (.greaterThan, "x"):
-                    result += count(for: rule.destination, x: x.clamped(to: rule.value + 1 ... 4000), m: m, a: a, s: s)
-                    x = x.clamped(to: 1 ... rule.value)
-                case (.greaterThan, "m"):
-                    result += count(for: rule.destination, x: x, m: m.clamped(to: rule.value + 1 ... 4000), a: a, s: s)
-                    m = m.clamped(to: 1 ... rule.value)
-                case (.greaterThan, "a"):
-                    result += count(for: rule.destination, x: x, m: m, a: a.clamped(to: rule.value + 1 ... 4000), s: s)
-                    a = a.clamped(to: 1 ... rule.value)
-                case (.greaterThan, "s"):
-                    result += count(for: rule.destination, x: x, m: m, a: a, s: s.clamped(to: rule.value + 1 ... 4000))
-                    s = s.clamped(to: 1 ... rule.value)
-
-                default:
-                    fatalError()
-                }
+            if state.workflow == "A" {
+                return state.x.count * state.m.count * state.a.count * state.s.count
             }
-            return result
+            var state = state
+            return workflows[state.workflow]!.rules.reduce(0) { result, rule in
+                result + count(state.apply(rule: rule))
+            }
         }
 
-        let accepted = count(for: "in", x: 1 ... 4000, m: 1 ... 4000, a: 1 ... 4000, s: 1 ... 4000)
+        let accepted = count(.initial)
 
         print("Part 2 (\(source)): \(accepted)")
     }
