@@ -99,7 +99,114 @@ enum Part1 {
 // MARK: - Part 2
 
 enum Part2 {
+    enum Operation {
+        case lessThan, greaterThan, always
+    }
+
+    struct Rule: CustomStringConvertible {
+        let property: String
+        let op: Operation
+        let value: Int
+        let destination: String
+
+        var description: String {
+            switch op {
+            case .always: "\(destination)"
+            case .lessThan: "\(property)<\(value):\(destination)"
+            case .greaterThan: "\(property)>\(value):\(destination)"
+            }
+        }
+    }
+
+    struct Workflow {
+        let name: String
+        let rules: [Rule]
+
+        init(_ string: any StringProtocol) {
+            var tokens = string.dropLast().split(separator: "{")
+            let name = String(tokens[0])
+            tokens = tokens[1].split(separator: ",")
+            let rules: [Rule] = tokens.map { token in
+                let tokens = token.components(separatedBy: ":")
+                if tokens.count == 1 {
+                    return .init(property: "", op: .always, value: 0, destination: tokens[0])
+                } else {
+                    let destination = tokens[1]
+                    var string = tokens[0]
+                    let property = String(string.removeFirst())
+                    let op: Operation = switch string.removeFirst() {
+                    case "<": .lessThan
+                    case ">": .greaterThan
+                    default: fatalError()
+                    }
+                    let value = Int(string)!
+                    return .init(property: property, op: op, value: value, destination: destination)
+                }
+            }
+            self.name = name
+            self.rules = rules
+        }
+    }
+
     static func run(_ source: InputData) {
-        print("Part 2 (\(source)):")
+        let sections = source.lines.split(separator: "")
+        let workflows: [String: Workflow] = sections[0].reduce(into: [:]) { result, line in
+            let workflow = Workflow(line)
+            result[workflow.name] = workflow
+        }
+
+        func count(for destination: String, x: ClosedRange<Int>, m: ClosedRange<Int>, a: ClosedRange<Int>, s: ClosedRange<Int>) -> Int {
+            if destination == "R" {
+                return 0
+            } else if destination == "A" {
+                return x.count * m.count * a.count * s.count
+            }
+            let workflow = workflows[destination]!
+            var x = x
+            var m = m
+            var a = a
+            var s = s
+            var result = 0
+            for rule in workflow.rules {
+                switch (rule.op, rule.property) {
+                case (.always, _):
+                    result += count(for: rule.destination, x: x, m: m, a: a, s: s)
+
+                case (.lessThan, "x"):
+                    result += count(for: rule.destination, x: x.clamped(to: 1 ... rule.value - 1), m: m, a: a, s: s)
+                    x = x.clamped(to: rule.value ... 4000)
+                case (.lessThan, "m"):
+                    result += count(for: rule.destination, x: x, m: m.clamped(to: 1 ... rule.value - 1), a: a, s: s)
+                    m = m.clamped(to: rule.value ... 4000)
+                case (.lessThan, "a"):
+                    result += count(for: rule.destination, x: x, m: m, a: a.clamped(to: 1 ... rule.value - 1), s: s)
+                    a = a.clamped(to: rule.value ... 4000)
+                case (.lessThan, "s"):
+                    result += count(for: rule.destination, x: x, m: m, a: a, s: s.clamped(to: 1 ... rule.value - 1))
+                    s = s.clamped(to: rule.value ... 4000)
+
+                case (.greaterThan, "x"):
+                    result += count(for: rule.destination, x: x.clamped(to: rule.value + 1 ... 4000), m: m, a: a, s: s)
+                    x = x.clamped(to: 1 ... rule.value)
+                case (.greaterThan, "m"):
+                    result += count(for: rule.destination, x: x, m: m.clamped(to: rule.value + 1 ... 4000), a: a, s: s)
+                    m = m.clamped(to: 1 ... rule.value)
+                case (.greaterThan, "a"):
+                    result += count(for: rule.destination, x: x, m: m, a: a.clamped(to: rule.value + 1 ... 4000), s: s)
+                    a = a.clamped(to: 1 ... rule.value)
+                case (.greaterThan, "s"):
+                    result += count(for: rule.destination, x: x, m: m, a: a, s: s.clamped(to: rule.value + 1 ... 4000))
+                    s = s.clamped(to: 1 ... rule.value)
+
+                default:
+                    fatalError()
+                }
+            }
+            return result
+        }
+
+        let accepted = count(for: "in", x: 1 ... 4000, m: 1 ... 4000, a: 1 ... 4000, s: 1 ... 4000)
+
+        print("Part 2 (\(source)): \(accepted)")
     }
 }
