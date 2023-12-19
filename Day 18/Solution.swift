@@ -73,8 +73,8 @@ enum Part1 {
 struct Edge {
     let xRange: ClosedRange<Int>
     let yRange: ClosedRange<Int>
-    var count: Int { xRange.count > 0 ? xRange.count : yRange.count }
-    var isVertical: Bool { yRange.count > 0 }
+    var length: Int { (xRange.count > 1 ? xRange.count : yRange.count) - 1 }
+    var isVertical: Bool { yRange.count > 1 }
     init(_ start: Coordinate, _ end: Coordinate) {
         self.xRange = min(start.x, end.x) ... max(start.x, end.x)
         self.yRange = min(start.y, end.y) ... max(start.y, end.y)
@@ -83,9 +83,8 @@ struct Edge {
 
 enum Part2 {
     static func run(_ source: InputData) {
-        var edges: [Edge] = []
         var coord = Coordinate.origin
-        for line in source.lines {
+        let edges: [Edge] = source.lines.reduce(into: []) { result, line in
             let parts = line.split(separator: " ")
             let dirInt = Int(String(parts[2].dropFirst(7).dropLast()))!
             let count = Int(String(parts[2].dropFirst(2).dropLast(2)), radix: 16)!
@@ -97,36 +96,27 @@ enum Part2 {
                 case 3: Coordinate(x: coord.x, y: coord.y - count)
                 default: fatalError()
                 }
-            edges.append(Edge(coord, end))
+            result.append(Edge(coord, end))
             coord = end
         }
 
-        let xValues = edges.flatMap { [$0.xRange.lowerBound, $0.xRange.upperBound] }.sorted()
-        let yValues = edges.flatMap { [$0.yRange.lowerBound, $0.yRange.upperBound] }.sorted()
-        let xRange = xValues.first! ... xValues.last!
-        let yRange = yValues.first! ... yValues.last!
-
-        var rows: [Int: [Int]] = [:]
-        rows.reserveCapacity(yRange.count)
-        for edge in edges {
+        let rows: [Int: [Int]] = edges.reduce(into: [:]) { result, edge in
             if edge.isVertical {
                 for y in edge.yRange.dropLast() {
-                    rows[y, default: []].append(edge.xRange.lowerBound)
+                    result[y, default: []].append(edge.xRange.lowerBound)
                 }
             }
         }
 
-        var fillCount = 0
-        for y in yRange {
-            var columns = rows[y, default: []].sorted()
-            guard columns.count >= 2 else { continue }
-            assert(columns.count.isMultiple(of: 2))
+        let fillCount = rows.values.reduce(into: 0) { result, row in
+            let columns = row.sorted()
+            assert(columns.count >= 2 && columns.count.isMultiple(of: 2))
             for idx in stride(from: 0, to: columns.count - 1, by: 2) {
-                fillCount += columns[idx + 1] - columns[idx] + 1
+                result += columns[idx + 1] - columns[idx]
             }
         }
 
-        let perimeter = edges.reduce(0) { $0 + $1.count - 1 }
+        let perimeter = edges.reduce(0) { $0 + $1.length }
 
         print("Part 2 (\(source)): \(fillCount + perimeter / 2 + 1)")
     }
