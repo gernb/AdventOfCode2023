@@ -103,8 +103,75 @@ enum Part1 {
 
 // MARK: - Part 2
 
+extension Module {
+    var registers: [String: Int]? {
+        guard case .conjunction(_, let received) = self else { return nil }
+        return received
+    }
+}
+
+func gcd(_ m: Int, _ n: Int) -> Int {
+    var a: Int = 0
+    var b: Int = max(m, n)
+    var r: Int = min(m, n)
+
+    while r != 0 {
+        a = b
+        b = r
+        r = a % b
+    }
+    return b
+}
+
+func lcm(_ m: Int, _ n: Int) -> Int {
+    return (m * n) / gcd(m, n)
+}
+
 enum Part2 {
+    static func pushButton(modules: inout [String: Module], inspect: (Signal) -> Void) {
+        var queue: [Signal] = [.button]
+        while queue.isEmpty == false {
+            let signal = queue.removeFirst()
+            inspect(signal)
+            let name = signal.destination
+            switch modules[name] {
+            case .broadcast(let destinations):
+                queue.append(contentsOf: destinations.map { Signal(source: name, destination: $0, pulse: signal.pulse) })
+            case .flipFlop(let destinations, var isOn):
+                guard signal.pulse == 0 else { continue }
+                queue.append(contentsOf: destinations.map { Signal(source: name, destination: $0, pulse: isOn ? 0 : 1) })
+                isOn.toggle()
+                modules[name] = .flipFlop(destinations: destinations, isOn: isOn)
+            case .conjunction(let destinations, var received):
+                received[signal.source] = signal.pulse
+                let pulse = received.values.allSatisfy({ $0 == 1 }) ? 0 : 1
+                queue.append(contentsOf: destinations.map { Signal(source: name, destination: $0, pulse: pulse) })
+                modules[name] = .conjunction(destinations: destinations, received: received)
+            case .none:
+                break
+            }
+        }
+    }
+
     static func run(_ source: InputData) {
-        print("Part 2 (\(source)):")
+        var modules = loadModules(source.lines)
+        let rxSource = modules.filter { (_, value: Module) in
+            value.destinations.contains("rx")
+        }.first!
+        var registers = rxSource.value.registers!
+        var count = 0
+        repeat {
+            count += 1
+            pushButton(modules: &modules) { signal in
+                if signal.pulse == 1 && signal.destination == rxSource.key {
+                    if registers[signal.source]! == 0 {
+                        registers[signal.source] = count
+                    }
+                }
+            }
+        } while registers.values.allSatisfy({ $0 != 0 }) == false
+        let result = registers.values.reduce(1) { lcm($0, $1) }
+
+        print("Part 2 (\(source)): \(result)")
     }
 }

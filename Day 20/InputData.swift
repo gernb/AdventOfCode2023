@@ -10,7 +10,7 @@ import Foundation
 struct InputData: CustomStringConvertible {
     static let day = 20
     static let part1: [Self] = [.example, .example2, .challenge]
-    static let part2: [Self] = [.example, .challenge]
+    static let part2: [Self] = [.challenge]
 
     let name: String
     let data: String
