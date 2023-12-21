@@ -59,7 +59,7 @@ enum Part1 {
             }
             tiles = next
         }
-        print("Part 1 (\(source)): \(tiles.count)")
+        print("Part 1 (\(source), steps: \(source.steps)): \(tiles.count)")
     }
 }
 
@@ -67,6 +67,48 @@ enum Part1 {
 
 enum Part2 {
     static func run(_ source: InputData) {
-        print("Part 2 (\(source)):")
+        let (map, start) = loadGardenMap(source.lines)
+        let size = source.lines.count
+        assert(size == source.lines[0].count)
+
+        var tiles: Set<Coordinate> = [start]
+        var a: [Int] = []
+
+        for stepCount in 0 ..< source.steps {
+            var next: Set<Coordinate> = []
+            for coord in tiles {
+                next.formUnion(
+                    coord.neighbours.filter {
+                        var x = $0.x % size
+                        if x < 0 {
+                            x = size + x
+                        }
+                        var y = $0.y % size
+                        if y < 0 {
+                            y = size + y
+                        }
+                        let c = Coordinate(x: x, y: y)
+                        return map[c] == .garden
+                    }
+                )
+            }
+
+            if (stepCount % size) == (source.steps % size) {
+                a.append(tiles.count)
+                if a.count == 3 {
+                    func f(_ n: Int) -> Int {
+                        let b0 = a[0]
+                        let b1 = a[1] - a[0]
+                        let b2 = a[2] - a[1]
+                        return b0 + b1 * n + (n * (n - 1) / 2) * (b2 - b1)
+                    }
+                    let answer = f(source.steps / size)
+                    print("Part 2 (\(source), steps: \(source.steps)): \(answer)")
+                    break
+                }
+            }
+            tiles = next
+        }
+//        print("Part 2 (\(source), steps: \(source.steps)): \(tiles.count)")
     }
 }

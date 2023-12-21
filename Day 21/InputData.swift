@@ -9,8 +9,17 @@ import Foundation
 
 struct InputData: CustomStringConvertible {
     static let day = 21
-    static let part1: [Self] = [.example, .challenge]
-    static let part2: [Self] = [.example, .challenge]
+    static let part1: [Self] = [.example(6), .challenge(64)]
+    static let part2: [Self] = [
+//        .example(6),
+//        .example(10),
+//        .example(50),
+//        .example(100),
+//        .example(500),
+//        .example(1000),
+//        .example(5000),
+        .challenge(26501365)
+    ]
 
     let name: String
     let steps: Int
@@ -19,10 +28,11 @@ struct InputData: CustomStringConvertible {
     var lines: [String] { data.components(separatedBy: .newlines) }
     var description: String { name }
 
-    static let example = Self(
-        name: "example",
-        steps: 6,
-        data:
+    static func example(_ steps: Int) -> Self {
+        .init(
+            name: "example",
+            steps: steps,
+            data:
 """
 ...........
 .....###.#.
@@ -36,10 +46,13 @@ struct InputData: CustomStringConvertible {
 .##..##.##.
 ...........
 """)
+    }
 
-    static let challenge = Self(
-        name: "challenge",
-        steps: 64,
-        data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
-    )
+    static func challenge(_ steps: Int) -> Self {
+        .init(
+            name: "challenge",
+            steps: steps,
+            data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
+        )
+    }
 }
