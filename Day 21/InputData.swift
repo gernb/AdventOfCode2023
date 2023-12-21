@@ -13,6 +13,7 @@ struct InputData: CustomStringConvertible {
     static let part2: [Self] = [.example, .challenge]
 
     let name: String
+    let steps: Int
     let data: String
 
     var lines: [String] { data.components(separatedBy: .newlines) }
@@ -20,12 +21,25 @@ struct InputData: CustomStringConvertible {
 
     static let example = Self(
         name: "example",
+        steps: 6,
         data:
 """
+...........
+.....###.#.
+.###.##..#.
+..#.#...#..
+....#.#....
+.##..S####.
+.##..#...#.
+.......##..
+.##.#.####.
+.##..##.##.
+...........
 """)
 
     static let challenge = Self(
         name: "challenge",
+        steps: 64,
         data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
     )
 }
