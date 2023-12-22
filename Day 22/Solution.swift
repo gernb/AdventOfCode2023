@@ -95,8 +95,52 @@ enum Part1 {
 
 // MARK: - Part 2
 
+extension Brick: Hashable {}
+
 enum Part2 {
+    static func calculateSupports(for stack: [Brick]) -> [Brick: Set<Brick>] {
+        stack.reduce(into: [:]) { result, brick in
+            guard brick.bottom > 1 else {
+                result[brick] = []
+                return
+            }
+            let lowerBrick = brick.movingDown()
+            let supportedBy = stack.bricks(atRow: lowerBrick.bottom).compactMap {
+                lowerBrick.intersects($0) ? $0 : nil
+            }
+            result[brick] = Set(supportedBy)
+        }
+    }
+
     static func run(_ source: InputData) {
-        print("Part 2 (\(source)):")
+        var bricks = source.lines.map(Brick.init)
+        bricks.sort(by: { $0.bottom < $1.bottom })
+        for (index, _) in bricks.enumerated() {
+            Part1.settle(index: index, stack: &bricks)
+        }
+        let supportsForBrick = calculateSupports(for: bricks)
+
+        func disintegrate(_ brick: Brick, disintegrated: inout Set<Brick>) {
+            let fallingBricks = supportsForBrick
+                .filter { (brick: Brick, supportedBy: Set<Brick>) in
+                    supportedBy.isEmpty == false &&
+                    disintegrated.contains(brick) == false &&
+                    supportedBy.isSubset(of: disintegrated)
+                }
+                .keys
+            disintegrated.formUnion(fallingBricks)
+            for brick in fallingBricks {
+                disintegrate(brick, disintegrated: &disintegrated)
+            }
+        }
+        var countsForBrick: [Brick: Int] = [:]
+        for brick in bricks {
+            var disintegrated: Set<Brick> = [brick]
+            disintegrate(brick, disintegrated: &disintegrated)
+            countsForBrick[brick] = disintegrated.count - 1
+        }
+        let result = countsForBrick.values.reduce(0, +)
+
+        print("Part 2 (\(source)): \(result)")
     }
 }
