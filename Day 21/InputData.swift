@@ -11,13 +11,13 @@ struct InputData: CustomStringConvertible {
     static let day = 21
     static let part1: [Self] = [.example(6), .challenge(64)]
     static let part2: [Self] = [
-//        .example(6),
-//        .example(10),
-//        .example(50),
-//        .example(100),
-//        .example(500),
-//        .example(1000),
-//        .example(5000),
+        .example(6),
+        .example(10),
+        .example(50),
+        .example(100),
+        .example(500),
+        .example(1000),
+        .example(5000),
         .challenge(26501365)
     ]
 

@@ -66,13 +66,28 @@ enum Part1 {
 // MARK: - Part 2
 
 enum Part2 {
+    static func fitQuadratic(x: [Int], y: [Int]) -> (a: Double, b: Double, c: Double) {
+        guard x.count >= 3 && x.count == y.count else { fatalError() }
+        let (x1, x2, x3) = (Double(x[x.count - 1]), Double(x[x.count - 2]), Double(x[x.count - 3]))
+        let (y1, y2, y3) = (Double(y[y.count - 1]), Double(y[y.count - 2]), Double(y[y.count - 3]))
+        guard x1 - x2 == x2 - x3 else { fatalError("Values must be equally spaced") }
+
+        let a = (y1 - 2 * y2 + y3) / (x1 * x1 - 2 * x2 * x2 + x3 * x3)
+        let b = (y1 - y2 - a * x1 * x1 + a * x2 * x2) / (x1 - x2)
+        let c = y1 - a * x1 * x1 - b * x1
+        return (a, b, c)
+    }
+
     static func run(_ source: InputData) {
         let (map, start) = loadGardenMap(source.lines)
         let size = source.lines.count
         assert(size == source.lines[0].count)
 
         var tiles: Set<Coordinate> = [start]
-        var a: [Int] = []
+        var x: [Int] = []
+        var y: [Int] = []
+        // Fewer than 7 values results in a bad quadratic fit for the examples
+        let valueCount = source.name == "challenge" ? 3 : 7
 
         for stepCount in 0 ..< source.steps {
             var next: Set<Coordinate> = []
@@ -94,21 +109,21 @@ enum Part2 {
             }
 
             if (stepCount % size) == (source.steps % size) {
-                a.append(tiles.count)
-                if a.count == 3 {
-                    func f(_ n: Int) -> Int {
-                        let b0 = a[0]
-                        let b1 = a[1] - a[0]
-                        let b2 = a[2] - a[1]
-                        return b0 + b1 * n + (n * (n - 1) / 2) * (b2 - b1)
-                    }
-                    let answer = f(source.steps / size)
-                    print("Part 2 (\(source), steps: \(source.steps)): \(answer)")
+                x.append(stepCount)
+                y.append(tiles.count)
+                if x.count == valueCount {
                     break
                 }
             }
             tiles = next
         }
-//        print("Part 2 (\(source), steps: \(source.steps)): \(tiles.count)")
+        if x.count == valueCount {
+            let (a, b, c) = fitQuadratic(x: x, y: y)
+            let n = Double(source.steps)
+            let value = a * n * n + b * n + c
+            print("Part 2 (\(source), steps: \(source.steps)): \(Int(value.rounded()))")
+        } else {
+            print("Part 2 (\(source), steps: \(source.steps)): \(tiles.count)")
+        }
     }
 }
