@@ -5,12 +5,16 @@
 //  Copyright © 2023 peter bohac. All rights reserved.
 //
 
-import Foundation
-
 struct InputData: CustomStringConvertible {
     static let day = 4
-    static let part1: [Self] = [.example, .challenge]
-    static let part2: [Self] = [.example, .challenge]
+    static func part1(_ challengeData: String?) -> [Self?] {[
+        .example,
+        challengeData.map { Self(name: "challenge", data: $0) }
+    ]}
+    static func part2(_ challengeData: String?) -> [Self?] {[
+        .example,
+        challengeData.map { Self(name: "challenge", data: $0) }
+    ]}
 
     let name: String
     let data: String
@@ -29,9 +33,4 @@ Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
 Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
 Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
 """)
-
-    static let challenge = Self(
-        name: "challenge",
-        data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
-    )
 }

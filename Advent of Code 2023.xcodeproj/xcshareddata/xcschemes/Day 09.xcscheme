@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "443F3B382B0FCEC00099E614"
-               BuildableName = "Day 09"
+               BuildableName = "Day09"
                BlueprintName = "Day 09"
                ReferencedContainer = "container:Advent of Code 2023.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
+      useCustomWorkingDirectory = "YES"
+      customWorkingDirectory = "$(PROJECT_DIR)/Day 09"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -45,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "443F3B382B0FCEC00099E614"
-            BuildableName = "Day 09"
+            BuildableName = "Day09"
             BlueprintName = "Day 09"
             ReferencedContainer = "container:Advent of Code 2023.xcodeproj">
          </BuildableReference>
@@ -62,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "443F3B382B0FCEC00099E614"
-            BuildableName = "Day 09"
+            BuildableName = "Day09"
             BlueprintName = "Day 09"
             ReferencedContainer = "container:Advent of Code 2023.xcodeproj">
          </BuildableReference>

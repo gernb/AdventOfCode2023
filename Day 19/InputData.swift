@@ -5,12 +5,16 @@
 //  Copyright © 2023 peter bohac. All rights reserved.
 //
 
-import Foundation
-
 struct InputData: CustomStringConvertible {
     static let day = 19
-    static let part1: [Self] = [.example, .challenge]
-    static let part2: [Self] = [.example, .challenge]
+    static func part1(_ challengeData: String?) -> [Self?] {[
+        .example,
+        challengeData.map { Self(name: "challenge", data: $0) }
+    ]}
+    static func part2(_ challengeData: String?) -> [Self?] {[
+        .example,
+        challengeData.map { Self(name: "challenge", data: $0) }
+    ]}
 
     let name: String
     let data: String
@@ -40,9 +44,4 @@ hdj{m>838:A,pv}
 {x=2461,m=1339,a=466,s=291}
 {x=2127,m=1623,a=2188,s=1013}
 """)
-
-    static let challenge = Self(
-        name: "challenge",
-        data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
-    )
 }

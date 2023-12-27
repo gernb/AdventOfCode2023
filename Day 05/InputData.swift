@@ -5,12 +5,16 @@
 //  Copyright © 2023 peter bohac. All rights reserved.
 //
 
-import Foundation
-
 struct InputData: CustomStringConvertible {
     static let day = 5
-    static let part1: [Self] = [.example, .challenge]
-    static let part2: [Self] = [.example, .challenge]
+    static func part1(_ challengeData: String?) -> [Self?] {[
+        .example,
+        challengeData.map { Self(name: "challenge", data: $0) }
+    ]}
+    static func part2(_ challengeData: String?) -> [Self?] {[
+        .example,
+        challengeData.map { Self(name: "challenge", data: $0) }
+    ]}
 
     let name: String
     let data: String
@@ -56,9 +60,4 @@ humidity-to-location map:
 60 56 37
 56 93 4
 """)
-
-    static let challenge = Self(
-        name: "challenge",
-        data: try! String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath).trimmingCharacters(in: .whitespacesAndNewlines)
-    )
 }

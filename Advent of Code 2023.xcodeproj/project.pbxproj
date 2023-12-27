@@ -323,22 +323,22 @@
 		443F3B2E2B0FCEBD0099E614 /* Day07 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day07; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F3B372B0FCEC00099E614 /* Day08 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day08; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F3B402B0FCEC00099E614 /* Day09 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day09; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B492B0FCEC10099E614 /* Day 10 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 10"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B522B0FCEF80099E614 /* Day 11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 11"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B5B2B0FCEFA0099E614 /* Day 12 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 12"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B642B0FCEFC0099E614 /* Day 13 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 13"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B6D2B0FCEFD0099E614 /* Day 14 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 14"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B762B0FCEFF0099E614 /* Day 15 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 15"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B7F2B0FCF010099E614 /* Day 16 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 16"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B882B0FCF020099E614 /* Day 17 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 17"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B912B0FCF030099E614 /* Day 18 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 18"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B9A2B0FCF040099E614 /* Day 19 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 19"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3BA32B0FCF050099E614 /* Day 20 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 20"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3BAC2B0FCF3D0099E614 /* Day 21 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 21"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3BB52B0FCF3E0099E614 /* Day 22 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 22"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3BBE2B0FCF3F0099E614 /* Day 23 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 23"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3BC72B0FCF400099E614 /* Day 24 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 24"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3BD02B0FCF420099E614 /* Day 25 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 25"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B492B0FCEC10099E614 /* Day10 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day10; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B522B0FCEF80099E614 /* Day11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day11; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B5B2B0FCEFA0099E614 /* Day12 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day12; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B642B0FCEFC0099E614 /* Day13 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day13; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B6D2B0FCEFD0099E614 /* Day14 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day14; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B762B0FCEFF0099E614 /* Day15 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day15; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B7F2B0FCF010099E614 /* Day16 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day16; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B882B0FCF020099E614 /* Day17 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day17; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B912B0FCF030099E614 /* Day18 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day18; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B9A2B0FCF040099E614 /* Day19 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day19; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3BA32B0FCF050099E614 /* Day20 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day20; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3BAC2B0FCF3D0099E614 /* Day21 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day21; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3BB52B0FCF3E0099E614 /* Day22 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day22; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3BBE2B0FCF3F0099E614 /* Day23 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day23; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3BC72B0FCF400099E614 /* Day24 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day24; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3BD02B0FCF420099E614 /* Day25 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day25; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DC27F02B0FD364007D9976 /* InputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputData.swift; path = "Day 01/InputData.swift"; sourceTree = "<group>"; };
 		44DC27F12B0FD364007D9976 /* Solution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Solution.swift; path = "Day 01/Solution.swift"; sourceTree = "<group>"; };
 		44DC28102B0FD4B9007D9976 /* Solution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Solution.swift; path = "Day 02/Solution.swift"; sourceTree = "<group>"; };
@@ -615,22 +615,22 @@
 				443F3B2E2B0FCEBD0099E614 /* Day07 */,
 				443F3B372B0FCEC00099E614 /* Day08 */,
 				443F3B402B0FCEC00099E614 /* Day09 */,
-				443F3B492B0FCEC10099E614 /* Day 10 */,
-				443F3B522B0FCEF80099E614 /* Day 11 */,
-				443F3B5B2B0FCEFA0099E614 /* Day 12 */,
-				443F3B642B0FCEFC0099E614 /* Day 13 */,
-				443F3B6D2B0FCEFD0099E614 /* Day 14 */,
-				443F3B762B0FCEFF0099E614 /* Day 15 */,
-				443F3B7F2B0FCF010099E614 /* Day 16 */,
-				443F3B882B0FCF020099E614 /* Day 17 */,
-				443F3B912B0FCF030099E614 /* Day 18 */,
-				443F3B9A2B0FCF040099E614 /* Day 19 */,
-				443F3BA32B0FCF050099E614 /* Day 20 */,
-				443F3BAC2B0FCF3D0099E614 /* Day 21 */,
-				443F3BB52B0FCF3E0099E614 /* Day 22 */,
-				443F3BBE2B0FCF3F0099E614 /* Day 23 */,
-				443F3BC72B0FCF400099E614 /* Day 24 */,
-				443F3BD02B0FCF420099E614 /* Day 25 */,
+				443F3B492B0FCEC10099E614 /* Day10 */,
+				443F3B522B0FCEF80099E614 /* Day11 */,
+				443F3B5B2B0FCEFA0099E614 /* Day12 */,
+				443F3B642B0FCEFC0099E614 /* Day13 */,
+				443F3B6D2B0FCEFD0099E614 /* Day14 */,
+				443F3B762B0FCEFF0099E614 /* Day15 */,
+				443F3B7F2B0FCF010099E614 /* Day16 */,
+				443F3B882B0FCF020099E614 /* Day17 */,
+				443F3B912B0FCF030099E614 /* Day18 */,
+				443F3B9A2B0FCF040099E614 /* Day19 */,
+				443F3BA32B0FCF050099E614 /* Day20 */,
+				443F3BAC2B0FCF3D0099E614 /* Day21 */,
+				443F3BB52B0FCF3E0099E614 /* Day22 */,
+				443F3BBE2B0FCF3F0099E614 /* Day23 */,
+				443F3BC72B0FCF400099E614 /* Day24 */,
+				443F3BD02B0FCF420099E614 /* Day25 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1030,7 +1030,7 @@
 			);
 			name = "Day 10";
 			productName = "Day 01";
-			productReference = 443F3B492B0FCEC10099E614 /* Day 10 */;
+			productReference = 443F3B492B0FCEC10099E614 /* Day10 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B4A2B0FCEF80099E614 /* Day 11 */ = {
@@ -1047,7 +1047,7 @@
 			);
 			name = "Day 11";
 			productName = "Day 01";
-			productReference = 443F3B522B0FCEF80099E614 /* Day 11 */;
+			productReference = 443F3B522B0FCEF80099E614 /* Day11 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B532B0FCEFA0099E614 /* Day 12 */ = {
@@ -1064,7 +1064,7 @@
 			);
 			name = "Day 12";
 			productName = "Day 01";
-			productReference = 443F3B5B2B0FCEFA0099E614 /* Day 12 */;
+			productReference = 443F3B5B2B0FCEFA0099E614 /* Day12 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B5C2B0FCEFC0099E614 /* Day 13 */ = {
@@ -1081,7 +1081,7 @@
 			);
 			name = "Day 13";
 			productName = "Day 01";
-			productReference = 443F3B642B0FCEFC0099E614 /* Day 13 */;
+			productReference = 443F3B642B0FCEFC0099E614 /* Day13 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B652B0FCEFD0099E614 /* Day 14 */ = {
@@ -1098,7 +1098,7 @@
 			);
 			name = "Day 14";
 			productName = "Day 01";
-			productReference = 443F3B6D2B0FCEFD0099E614 /* Day 14 */;
+			productReference = 443F3B6D2B0FCEFD0099E614 /* Day14 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B6E2B0FCEFF0099E614 /* Day 15 */ = {
@@ -1115,7 +1115,7 @@
 			);
 			name = "Day 15";
 			productName = "Day 01";
-			productReference = 443F3B762B0FCEFF0099E614 /* Day 15 */;
+			productReference = 443F3B762B0FCEFF0099E614 /* Day15 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B772B0FCF010099E614 /* Day 16 */ = {
@@ -1132,7 +1132,7 @@
 			);
 			name = "Day 16";
 			productName = "Day 01";
-			productReference = 443F3B7F2B0FCF010099E614 /* Day 16 */;
+			productReference = 443F3B7F2B0FCF010099E614 /* Day16 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B802B0FCF020099E614 /* Day 17 */ = {
@@ -1149,7 +1149,7 @@
 			);
 			name = "Day 17";
 			productName = "Day 01";
-			productReference = 443F3B882B0FCF020099E614 /* Day 17 */;
+			productReference = 443F3B882B0FCF020099E614 /* Day17 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B892B0FCF030099E614 /* Day 18 */ = {
@@ -1166,7 +1166,7 @@
 			);
 			name = "Day 18";
 			productName = "Day 01";
-			productReference = 443F3B912B0FCF030099E614 /* Day 18 */;
+			productReference = 443F3B912B0FCF030099E614 /* Day18 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B922B0FCF040099E614 /* Day 19 */ = {
@@ -1183,7 +1183,7 @@
 			);
 			name = "Day 19";
 			productName = "Day 01";
-			productReference = 443F3B9A2B0FCF040099E614 /* Day 19 */;
+			productReference = 443F3B9A2B0FCF040099E614 /* Day19 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B9B2B0FCF050099E614 /* Day 20 */ = {
@@ -1200,7 +1200,7 @@
 			);
 			name = "Day 20";
 			productName = "Day 01";
-			productReference = 443F3BA32B0FCF050099E614 /* Day 20 */;
+			productReference = 443F3BA32B0FCF050099E614 /* Day20 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3BA42B0FCF3D0099E614 /* Day 21 */ = {
@@ -1217,7 +1217,7 @@
 			);
 			name = "Day 21";
 			productName = "Day 01";
-			productReference = 443F3BAC2B0FCF3D0099E614 /* Day 21 */;
+			productReference = 443F3BAC2B0FCF3D0099E614 /* Day21 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3BAD2B0FCF3E0099E614 /* Day 22 */ = {
@@ -1234,7 +1234,7 @@
 			);
 			name = "Day 22";
 			productName = "Day 01";
-			productReference = 443F3BB52B0FCF3E0099E614 /* Day 22 */;
+			productReference = 443F3BB52B0FCF3E0099E614 /* Day22 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3BB62B0FCF3F0099E614 /* Day 23 */ = {
@@ -1251,7 +1251,7 @@
 			);
 			name = "Day 23";
 			productName = "Day 01";
-			productReference = 443F3BBE2B0FCF3F0099E614 /* Day 23 */;
+			productReference = 443F3BBE2B0FCF3F0099E614 /* Day23 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3BBF2B0FCF400099E614 /* Day 24 */ = {
@@ -1268,7 +1268,7 @@
 			);
 			name = "Day 24";
 			productName = "Day 01";
-			productReference = 443F3BC72B0FCF400099E614 /* Day 24 */;
+			productReference = 443F3BC72B0FCF400099E614 /* Day24 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3BC82B0FCF420099E614 /* Day 25 */ = {
@@ -1285,7 +1285,7 @@
 			);
 			name = "Day 25";
 			productName = "Day 01";
-			productReference = 443F3BD02B0FCF420099E614 /* Day 25 */;
+			productReference = 443F3BD02B0FCF420099E614 /* Day25 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -1864,7 +1864,7 @@
 		443F3B472B0FCEC10099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day10;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1872,7 +1872,7 @@
 		443F3B482B0FCEC10099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day10;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1880,7 +1880,7 @@
 		443F3B502B0FCEF80099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day11;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1888,7 +1888,7 @@
 		443F3B512B0FCEF80099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day11;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1896,7 +1896,7 @@
 		443F3B592B0FCEFA0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day12;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1904,7 +1904,7 @@
 		443F3B5A2B0FCEFA0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day12;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1912,7 +1912,7 @@
 		443F3B622B0FCEFC0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day13;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1920,7 +1920,7 @@
 		443F3B632B0FCEFC0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day13;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1928,7 +1928,7 @@
 		443F3B6B2B0FCEFD0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day14;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1936,7 +1936,7 @@
 		443F3B6C2B0FCEFD0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day14;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1944,7 +1944,7 @@
 		443F3B742B0FCEFF0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day15;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1952,7 +1952,7 @@
 		443F3B752B0FCEFF0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day15;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1960,7 +1960,7 @@
 		443F3B7D2B0FCF010099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day16;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1968,7 +1968,7 @@
 		443F3B7E2B0FCF010099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day16;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1976,7 +1976,7 @@
 		443F3B862B0FCF020099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day17;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1984,7 +1984,7 @@
 		443F3B872B0FCF020099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day17;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1992,7 +1992,7 @@
 		443F3B8F2B0FCF030099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day18;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2000,7 +2000,7 @@
 		443F3B902B0FCF030099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day18;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2008,7 +2008,7 @@
 		443F3B982B0FCF040099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day19;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2016,7 +2016,7 @@
 		443F3B992B0FCF040099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day19;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2024,7 +2024,7 @@
 		443F3BA12B0FCF050099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day20;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2032,7 +2032,7 @@
 		443F3BA22B0FCF050099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day20;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2040,7 +2040,7 @@
 		443F3BAA2B0FCF3D0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day21;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2048,7 +2048,7 @@
 		443F3BAB2B0FCF3D0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day21;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2056,7 +2056,7 @@
 		443F3BB32B0FCF3E0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day22;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2064,7 +2064,7 @@
 		443F3BB42B0FCF3E0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day22;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2072,7 +2072,7 @@
 		443F3BBC2B0FCF3F0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day23;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2080,7 +2080,7 @@
 		443F3BBD2B0FCF3F0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day23;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2088,7 +2088,7 @@
 		443F3BC52B0FCF400099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day24;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2096,7 +2096,7 @@
 		443F3BC62B0FCF400099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day24;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2104,7 +2104,7 @@
 		443F3BCE2B0FCF420099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day25;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2112,7 +2112,7 @@
 		443F3BCF2B0FCF420099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day25;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

@@ -4,7 +4,19 @@
 //  Copyright © 2023 peter bohac. All rights reserved.
 //
 
+import Foundation
+
+let challenge = (
+    (try? String(contentsOfFile: "./input.txt")) ??
+    (try? String(contentsOfFile: ("~/Desktop/input.txt" as NSString).expandingTildeInPath))
+    )
+    .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+
 print("Day \(InputData.day):")
-InputData.part1.forEach(Part1.run)
+for input in InputData.part1(challenge) {
+    input.map(Part1.run)
+}
 print("")
-InputData.part2.forEach(Part2.run)
+for input in InputData.part2(challenge) {
+    input.map(Part2.run)
+}
