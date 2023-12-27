@@ -314,15 +314,15 @@
 
 /* Begin PBXFileReference section */
 		443F3AD52B0FB9390099E614 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		443F3AF22B0FCEAE0099E614 /* Day 01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 01"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B012B0FCEB20099E614 /* Day 02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 02"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B0A2B0FCEB60099E614 /* Day 03 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 03"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B132B0FCEB70099E614 /* Day 04 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 04"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B1C2B0FCEB90099E614 /* Day 05 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 05"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B252B0FCEBA0099E614 /* Day 06 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 06"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B2E2B0FCEBD0099E614 /* Day 07 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 07"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B372B0FCEC00099E614 /* Day 08 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 08"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443F3B402B0FCEC00099E614 /* Day 09 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 09"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3AF22B0FCEAE0099E614 /* Day01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day01; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B012B0FCEB20099E614 /* Day02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day02; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B0A2B0FCEB60099E614 /* Day03 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day03; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B132B0FCEB70099E614 /* Day04 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day04; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B1C2B0FCEB90099E614 /* Day05 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day05; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B252B0FCEBA0099E614 /* Day06 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day06; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B2E2B0FCEBD0099E614 /* Day07 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day07; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B372B0FCEC00099E614 /* Day08 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day08; sourceTree = BUILT_PRODUCTS_DIR; };
+		443F3B402B0FCEC00099E614 /* Day09 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day09; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F3B492B0FCEC10099E614 /* Day 10 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 10"; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F3B522B0FCEF80099E614 /* Day 11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 11"; sourceTree = BUILT_PRODUCTS_DIR; };
 		443F3B5B2B0FCEFA0099E614 /* Day 12 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 12"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -606,15 +606,15 @@
 		443F3ACA2B0FB8DB0099E614 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				443F3AF22B0FCEAE0099E614 /* Day 01 */,
-				443F3B012B0FCEB20099E614 /* Day 02 */,
-				443F3B0A2B0FCEB60099E614 /* Day 03 */,
-				443F3B132B0FCEB70099E614 /* Day 04 */,
-				443F3B1C2B0FCEB90099E614 /* Day 05 */,
-				443F3B252B0FCEBA0099E614 /* Day 06 */,
-				443F3B2E2B0FCEBD0099E614 /* Day 07 */,
-				443F3B372B0FCEC00099E614 /* Day 08 */,
-				443F3B402B0FCEC00099E614 /* Day 09 */,
+				443F3AF22B0FCEAE0099E614 /* Day01 */,
+				443F3B012B0FCEB20099E614 /* Day02 */,
+				443F3B0A2B0FCEB60099E614 /* Day03 */,
+				443F3B132B0FCEB70099E614 /* Day04 */,
+				443F3B1C2B0FCEB90099E614 /* Day05 */,
+				443F3B252B0FCEBA0099E614 /* Day06 */,
+				443F3B2E2B0FCEBD0099E614 /* Day07 */,
+				443F3B372B0FCEC00099E614 /* Day08 */,
+				443F3B402B0FCEC00099E614 /* Day09 */,
 				443F3B492B0FCEC10099E614 /* Day 10 */,
 				443F3B522B0FCEF80099E614 /* Day 11 */,
 				443F3B5B2B0FCEFA0099E614 /* Day 12 */,
@@ -877,7 +877,7 @@
 			);
 			name = "Day 01";
 			productName = "Day 01";
-			productReference = 443F3AF22B0FCEAE0099E614 /* Day 01 */;
+			productReference = 443F3AF22B0FCEAE0099E614 /* Day01 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3AF92B0FCEB20099E614 /* Day 02 */ = {
@@ -894,7 +894,7 @@
 			);
 			name = "Day 02";
 			productName = "Day 01";
-			productReference = 443F3B012B0FCEB20099E614 /* Day 02 */;
+			productReference = 443F3B012B0FCEB20099E614 /* Day02 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B022B0FCEB60099E614 /* Day 03 */ = {
@@ -911,7 +911,7 @@
 			);
 			name = "Day 03";
 			productName = "Day 01";
-			productReference = 443F3B0A2B0FCEB60099E614 /* Day 03 */;
+			productReference = 443F3B0A2B0FCEB60099E614 /* Day03 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B0B2B0FCEB70099E614 /* Day 04 */ = {
@@ -928,7 +928,7 @@
 			);
 			name = "Day 04";
 			productName = "Day 01";
-			productReference = 443F3B132B0FCEB70099E614 /* Day 04 */;
+			productReference = 443F3B132B0FCEB70099E614 /* Day04 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B142B0FCEB90099E614 /* Day 05 */ = {
@@ -945,7 +945,7 @@
 			);
 			name = "Day 05";
 			productName = "Day 01";
-			productReference = 443F3B1C2B0FCEB90099E614 /* Day 05 */;
+			productReference = 443F3B1C2B0FCEB90099E614 /* Day05 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B1D2B0FCEBA0099E614 /* Day 06 */ = {
@@ -962,7 +962,7 @@
 			);
 			name = "Day 06";
 			productName = "Day 01";
-			productReference = 443F3B252B0FCEBA0099E614 /* Day 06 */;
+			productReference = 443F3B252B0FCEBA0099E614 /* Day06 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B262B0FCEBD0099E614 /* Day 07 */ = {
@@ -979,7 +979,7 @@
 			);
 			name = "Day 07";
 			productName = "Day 01";
-			productReference = 443F3B2E2B0FCEBD0099E614 /* Day 07 */;
+			productReference = 443F3B2E2B0FCEBD0099E614 /* Day07 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B2F2B0FCEC00099E614 /* Day 08 */ = {
@@ -996,7 +996,7 @@
 			);
 			name = "Day 08";
 			productName = "Day 01";
-			productReference = 443F3B372B0FCEC00099E614 /* Day 08 */;
+			productReference = 443F3B372B0FCEC00099E614 /* Day08 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B382B0FCEC00099E614 /* Day 09 */ = {
@@ -1013,7 +1013,7 @@
 			);
 			name = "Day 09";
 			productName = "Day 01";
-			productReference = 443F3B402B0FCEC00099E614 /* Day 09 */;
+			productReference = 443F3B402B0FCEC00099E614 /* Day09 */;
 			productType = "com.apple.product-type.tool";
 		};
 		443F3B412B0FCEC10099E614 /* Day 10 */ = {
@@ -1720,10 +1720,7 @@
 		443F3AF72B0FCEAE0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day01;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1731,10 +1728,7 @@
 		443F3AF82B0FCEAE0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day01;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1742,10 +1736,7 @@
 		443F3AFF2B0FCEB20099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day02;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1753,10 +1744,7 @@
 		443F3B002B0FCEB20099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day02;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1764,10 +1752,7 @@
 		443F3B082B0FCEB60099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day03;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1775,10 +1760,7 @@
 		443F3B092B0FCEB60099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day03;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1786,10 +1768,7 @@
 		443F3B112B0FCEB70099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day04;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1797,10 +1776,7 @@
 		443F3B122B0FCEB70099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day04;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1808,10 +1784,7 @@
 		443F3B1A2B0FCEB90099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day05;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1819,10 +1792,7 @@
 		443F3B1B2B0FCEB90099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day05;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1830,10 +1800,7 @@
 		443F3B232B0FCEBA0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day06;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1841,10 +1808,7 @@
 		443F3B242B0FCEBA0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day06;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1852,10 +1816,7 @@
 		443F3B2C2B0FCEBD0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day07;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1863,10 +1824,7 @@
 		443F3B2D2B0FCEBD0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day07;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1874,10 +1832,7 @@
 		443F3B352B0FCEC00099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day08;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1885,10 +1840,7 @@
 		443F3B362B0FCEC00099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day08;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1896,10 +1848,7 @@
 		443F3B3E2B0FCEC00099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day09;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1907,10 +1856,7 @@
 		443F3B3F2B0FCEC00099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Day09;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1918,9 +1864,6 @@
 		443F3B472B0FCEC10099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1929,9 +1872,6 @@
 		443F3B482B0FCEC10099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1940,9 +1880,6 @@
 		443F3B502B0FCEF80099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1951,9 +1888,6 @@
 		443F3B512B0FCEF80099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1962,9 +1896,6 @@
 		443F3B592B0FCEFA0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1973,9 +1904,6 @@
 		443F3B5A2B0FCEFA0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1984,9 +1912,6 @@
 		443F3B622B0FCEFC0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1995,9 +1920,6 @@
 		443F3B632B0FCEFC0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2006,9 +1928,6 @@
 		443F3B6B2B0FCEFD0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2017,9 +1936,6 @@
 		443F3B6C2B0FCEFD0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2028,9 +1944,6 @@
 		443F3B742B0FCEFF0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2039,9 +1952,6 @@
 		443F3B752B0FCEFF0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2050,9 +1960,6 @@
 		443F3B7D2B0FCF010099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2061,9 +1968,6 @@
 		443F3B7E2B0FCF010099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2072,9 +1976,6 @@
 		443F3B862B0FCF020099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2083,9 +1984,6 @@
 		443F3B872B0FCF020099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2094,9 +1992,6 @@
 		443F3B8F2B0FCF030099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2105,9 +2000,6 @@
 		443F3B902B0FCF030099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2116,9 +2008,6 @@
 		443F3B982B0FCF040099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2127,9 +2016,6 @@
 		443F3B992B0FCF040099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2138,9 +2024,6 @@
 		443F3BA12B0FCF050099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2149,9 +2032,6 @@
 		443F3BA22B0FCF050099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2160,9 +2040,6 @@
 		443F3BAA2B0FCF3D0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2171,9 +2048,6 @@
 		443F3BAB2B0FCF3D0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2182,9 +2056,6 @@
 		443F3BB32B0FCF3E0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2193,9 +2064,6 @@
 		443F3BB42B0FCF3E0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2204,9 +2072,6 @@
 		443F3BBC2B0FCF3F0099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2215,9 +2080,6 @@
 		443F3BBD2B0FCF3F0099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2226,9 +2088,6 @@
 		443F3BC52B0FCF400099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2237,9 +2096,6 @@
 		443F3BC62B0FCF400099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2248,9 +2104,6 @@
 		443F3BCE2B0FCF420099E614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2259,9 +2112,6 @@
 		443F3BCF2B0FCF420099E614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XB7GA2R58L;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
