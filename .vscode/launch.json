@@ -224,9 +224,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day19",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day19",
-            "preLaunchTask": "swift: Build Debug Day19"
+            "name": "Debug Day10",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day10",
+            "preLaunchTask": "swift: Build Debug Day10"
         },
         {
             "type": "lldb",
@@ -236,177 +236,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day19",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day19",
-            "preLaunchTask": "swift: Build Release Day19"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day18",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day18",
-            "preLaunchTask": "swift: Build Debug Day18"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day18",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day18",
-            "preLaunchTask": "swift: Build Release Day18"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day17",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day17",
-            "preLaunchTask": "swift: Build Debug Day17"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day17",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day17",
-            "preLaunchTask": "swift: Build Release Day17"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day16",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day16",
-            "preLaunchTask": "swift: Build Debug Day16"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day16",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day16",
-            "preLaunchTask": "swift: Build Release Day16"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day15",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day15",
-            "preLaunchTask": "swift: Build Debug Day15"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day15",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day15",
-            "preLaunchTask": "swift: Build Release Day15"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day14",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day14",
-            "preLaunchTask": "swift: Build Debug Day14"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day14",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day14",
-            "preLaunchTask": "swift: Build Release Day14"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day13",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day13",
-            "preLaunchTask": "swift: Build Debug Day13"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day13",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day13",
-            "preLaunchTask": "swift: Build Release Day13"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day12",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day12",
-            "preLaunchTask": "swift: Build Debug Day12"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "sourceLanguages": [
-                "swift"
-            ],
-            "args": [],
-            "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day12",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day12",
-            "preLaunchTask": "swift: Build Release Day12"
+            "name": "Release Day10",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day10",
+            "preLaunchTask": "swift: Build Release Day10"
         },
         {
             "type": "lldb",
@@ -440,9 +272,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day10",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day10",
-            "preLaunchTask": "swift: Build Debug Day10"
+            "name": "Debug Day12",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day12",
+            "preLaunchTask": "swift: Build Debug Day12"
         },
         {
             "type": "lldb",
@@ -452,9 +284,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day10",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day10",
-            "preLaunchTask": "swift: Build Release Day10"
+            "name": "Release Day12",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day12",
+            "preLaunchTask": "swift: Build Release Day12"
         },
         {
             "type": "lldb",
@@ -464,9 +296,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day25",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day25",
-            "preLaunchTask": "swift: Build Debug Day25"
+            "name": "Debug Day13",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day13",
+            "preLaunchTask": "swift: Build Debug Day13"
         },
         {
             "type": "lldb",
@@ -476,9 +308,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day25",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day25",
-            "preLaunchTask": "swift: Build Release Day25"
+            "name": "Release Day13",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day13",
+            "preLaunchTask": "swift: Build Release Day13"
         },
         {
             "type": "lldb",
@@ -488,9 +320,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day24",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day24",
-            "preLaunchTask": "swift: Build Debug Day24"
+            "name": "Debug Day14",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day14",
+            "preLaunchTask": "swift: Build Debug Day14"
         },
         {
             "type": "lldb",
@@ -500,9 +332,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day24",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day24",
-            "preLaunchTask": "swift: Build Release Day24"
+            "name": "Release Day14",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day14",
+            "preLaunchTask": "swift: Build Release Day14"
         },
         {
             "type": "lldb",
@@ -512,9 +344,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day23",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day23",
-            "preLaunchTask": "swift: Build Debug Day23"
+            "name": "Debug Day15",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day15",
+            "preLaunchTask": "swift: Build Debug Day15"
         },
         {
             "type": "lldb",
@@ -524,9 +356,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day23",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day23",
-            "preLaunchTask": "swift: Build Release Day23"
+            "name": "Release Day15",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day15",
+            "preLaunchTask": "swift: Build Release Day15"
         },
         {
             "type": "lldb",
@@ -536,9 +368,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day22",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day22",
-            "preLaunchTask": "swift: Build Debug Day22"
+            "name": "Debug Day16",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day16",
+            "preLaunchTask": "swift: Build Debug Day16"
         },
         {
             "type": "lldb",
@@ -548,9 +380,105 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day22",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day22",
-            "preLaunchTask": "swift: Build Release Day22"
+            "name": "Release Day16",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day16",
+            "preLaunchTask": "swift: Build Release Day16"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Debug Day17",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day17",
+            "preLaunchTask": "swift: Build Debug Day17"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Release Day17",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day17",
+            "preLaunchTask": "swift: Build Release Day17"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Debug Day18",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day18",
+            "preLaunchTask": "swift: Build Debug Day18"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Release Day18",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day18",
+            "preLaunchTask": "swift: Build Release Day18"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Debug Day19",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day19",
+            "preLaunchTask": "swift: Build Debug Day19"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Release Day19",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day19",
+            "preLaunchTask": "swift: Build Release Day19"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Debug Day20",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day20",
+            "preLaunchTask": "swift: Build Debug Day20"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Release Day20",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day20",
+            "preLaunchTask": "swift: Build Release Day20"
         },
         {
             "type": "lldb",
@@ -584,9 +512,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Debug Day20",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day20",
-            "preLaunchTask": "swift: Build Debug Day20"
+            "name": "Debug Day22",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day22",
+            "preLaunchTask": "swift: Build Debug Day22"
         },
         {
             "type": "lldb",
@@ -596,9 +524,81 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:AdventOfCode2023}",
-            "name": "Release Day20",
-            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day20",
-            "preLaunchTask": "swift: Build Release Day20"
+            "name": "Release Day22",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day22",
+            "preLaunchTask": "swift: Build Release Day22"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Debug Day23",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day23",
+            "preLaunchTask": "swift: Build Debug Day23"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Release Day23",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day23",
+            "preLaunchTask": "swift: Build Release Day23"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Debug Day24",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day24",
+            "preLaunchTask": "swift: Build Debug Day24"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Release Day24",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day24",
+            "preLaunchTask": "swift: Build Release Day24"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Debug Day25",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/debug/Day25",
+            "preLaunchTask": "swift: Build Debug Day25"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:AdventOfCode2023}",
+            "name": "Release Day25",
+            "program": "${workspaceFolder:AdventOfCode2023}/.build/release/Day25",
+            "preLaunchTask": "swift: Build Release Day25"
         }
     ]
 }
